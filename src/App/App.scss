@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+
+  h1 {
+    margin: 8px;
+    font-family: 'Suez One', serif;
+  }
 }
 
-.App-logo {
-  height: 40vmin;
+.pf-logo {
+  height: 49px;
+  margin-top: -8px;
   pointer-events: none;
 }
 
