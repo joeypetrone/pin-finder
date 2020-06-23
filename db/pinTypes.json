@@ -1,0 +1,59 @@
+{
+  "pinType01" : {
+    "title" : "Brass Disk"
+  },
+  "pinType02" : {
+    "title" : "Concrete Monument"      
+  },
+  "pinType03" : {
+    "title" : "Drill Hole"     
+  },
+  "pinType04" : {
+    "title" : "Iron Rod with Cap"      
+  },
+  "pinType05" : {
+    "title" : "Iron Rod"     
+  },
+  "pinType06" : {
+    "title" : "Iron Pipe"      
+  },
+  "pinType07" : {
+    "title" : "Spike"     
+  },
+  "pinType08" : {
+    "title" : "Tree"      
+  },
+  "pinType09" : {
+    "title" : "Nail in Tree"      
+  },
+  "pinType10" : {
+    "title" : "Stone Obelisk"     
+  },
+  "pinType11" : {
+    "title" : "Rock Cairn"     
+  },
+  "pinType12" : {
+    "title" : "Fence Post"     
+  },
+  "pinType13" : {
+    "title" : "Survey Benchmark Monument"     
+  },
+  "pinType14" : {
+    "title" : "Right of Way Monument"     
+  },
+  "pinType15" : {
+    "title" : "Nail in Pavement"     
+  },
+  "pinType16" : {
+    "title" : "Liquor Bottle"     
+  },
+  "pinType17" : {
+    "title" : "Wheel Axle"     
+  },
+  "pinType18" : {
+    "title" : "Nail in Concrete"     
+  },
+  "pinType19" : {
+    "title" : "Pin Not Found"     
+  }
+}
