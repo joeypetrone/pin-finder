@@ -1,0 +1,112 @@
+{
+  "pin01" : {
+    "propertyId": "property01",
+    "name": "Charlotte Ave & 6th Ave N",
+    "locationLat": 36.165606,
+    "locationLng": -86.782713,
+    "notes" : "Found in pavement",
+    "imageUrl" : "https://i.stack.imgur.com/3telo.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType15",
+    "uid" : "12345"      
+  },
+  "pin02" : {
+    "propertyId": "property01",
+    "name": "U.S. Hwy 31 & Capital Towers",
+    "locationLat": 36.168388,
+    "locationLng": -86.785020,
+    "notes" : "Pin was not found",
+    "imageUrl" : "https://2.bp.blogspot.com/-euGUULQrEs0/TbFip5WDtvI/AAAAAAAADaY/lB7fUTqsKL4/s1600/002b.jpg",
+    "wasFound" : false,
+    "typeId" : "pinType19",
+    "uid" : "12345"          
+  },
+  "pin03" : {
+    "propertyId": "property02",
+    "name": "Commerce St & 3rd Ave N",
+    "locationLat": 36.162866,
+    "locationLng": -86.776879,
+    "notes" : "Found nail in sidewalk",
+    "imageUrl" : "https://media.sandiegoreader.com/img/photos/2013/03/19/sidewalk_t670.jpg?b3f6a5d7692ccc373d56e40cf708e3fa67d9af9d%27",
+    "wasFound" : true,
+    "typeId" : "pinType18",
+    "uid" : "12345"          
+  },
+  "pin04" : {
+    "propertyId": "property02",
+    "name": "Commerce St & 4th Ave N",
+    "locationLat": 36.162374,
+    "locationLng": -86.778044,
+    "notes" : "Found in grass with cap",
+    "imageUrl" : "https://i.ytimg.com/vi/CRgamDP5-rY/hqdefault.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType04",
+    "uid" : "12345"          
+  },
+  "pin05" : {
+    "propertyId": "property03",
+    "name": "Plus Park Blvd & Pias Credit Union",
+    "locationLat": 36.128850,
+    "locationLng": -86.725754,
+    "notes" : "Found in grass with cap next to metal fence post",
+    "imageUrl" : "https://bryantfence.com/wp-content/uploads/2014/05/SURVEYOR-PIN-ORANGE-FLAGGING-TAPE.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType04",
+    "uid" : "12345"          
+  },
+  "pin06" : {
+    "propertyId": "property03",
+    "name": "Plus Park Blvd & Academy of Make Up Arts",
+    "locationLat": 36.126911,
+    "locationLng": -86.725145,
+    "notes" : "Found in pipe under 6 inches of dirt",
+    "imageUrl" : "https://www.federaltitle.com/wp-content/themes/yootheme/cache/diannesurvey-c862f992.jpeg",
+    "wasFound" : true,
+    "typeId" : "pinType06",
+    "uid" : "12345"          
+  },
+  "pin07" : {
+    "propertyId": "property04",
+    "name": "U.S. Hwy 31 & Eighth Avenue Antique Mall",
+    "locationLat": 36.133225,
+    "locationLng": -86.779318,
+    "notes" : "Found in pavement",
+    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/8/80/UN_prop_marker.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType13",
+    "uid" : "67890"          
+  },
+  "pin08" : {
+    "propertyId": "property04",
+    "name": "U.S. Hwy 31 & Tiger Market",
+    "locationLat": 36.133728,
+    "locationLng": -86.779273,
+    "notes" : "Found in concrete. U.s. Geological Survey Marker, Maiden 1940",
+    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/f/f4/United_States_National_Geodetic_Survey_marker_5667.JPG",
+    "wasFound" : true,
+    "typeId" : "pinType13",
+    "uid" : "67890"        
+  },
+  "pin09" : {
+    "propertyId": "property05",
+    "name": "Charlotte Ave & EurWerks",
+    "locationLat": 36.152243,
+    "locationLng": -86.837736,
+    "notes" : "Found wheel axle in pavement",
+    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/SurveyCottonSpindleSpike1.jpg/500px-SurveyCottonSpindleSpike1.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType17",
+    "uid" : "67890"        
+  },
+  "pin10" : {
+    "propertyId": "property05",
+    "name": "43rd Ave N & Alley",
+    "locationLat": 36.151807,
+    "locationLng": -86.838261,
+    "notes" : "Found a liquor bottle",
+    "imageUrl" : "https://previews.123rf.com/images/cristicroitoru/cristicroitoru2002/cristicroitoru200200015/140998465-bucharest-romania-%E2%80%93-02-20-2020-bottle-of-stalinskaya-vodka-left-in-the-dirt-in-a-park-.jpg",
+    "wasFound" : true,
+    "typeId" : "pinType16",
+    "uid" : "67890"        
+  }
+}

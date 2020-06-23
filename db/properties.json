@@ -1,0 +1,112 @@
+  {
+    "property01" : {
+      "name": "Tennessee State Capitol",
+      "centerLat": 36.165763,
+      "centerLng": -86.784209,
+      "description" : "Greek Revival 1845-1859 legislative building & grounds housing the tomb of President James K. Polk.",
+      "imageUrl" : "https://lh6.googleusercontent.com/proxy/awK9SNVsLBSTTrQev2B8Patf3fCbIGWa9mUi-pX_00Uk7H3BKBs2QAZpJAfXyb-MbRJaWkIzbXgR_IRJQsIuQRIWZBq7hSEwBrW0-08kltxbi0jIpKLqKedwQYq0RHB3QtK4tgi7zJCTmOwL6fc1WuckG0M=w408-h272-k-no",
+      "address" : "600 Dr. M.L.K. Jr Blvd, Nashville, TN 37243",
+      "owner" : "The People",
+      "squareFeet" : 8000,
+      "uid": "12345"      
+    },
+    "property02" : {
+      "name": "Batman Building",
+      "centerLat": 36.162385,
+      "centerLng": -86.776972,
+      "description" : "AT&T Corporate campus",
+      "imageUrl" : "https://lh6.googleusercontent.com/proxy/yA05YWPpzpg98QKddQ28E8vZf8wo1tRMHHi6wg9dAFSjt5JX6nXLfv33eahhgGDeXemEqcNhryjH29eQf2EpIIbjyYeSMIrawR1_y5QUaM-SGQx1WazNaowWqDu28h05_cL17e-yshMamGwpZFo97E10NT7AAg=w408-h544-k-no",
+      "address" : "333 Commerce St, Nashville, TN 37219",
+      "owner" : "AT&T",
+      "squareFeet" : 2200,
+      "uid": "12345"      
+    },
+    "property03" : {
+      "name": "Nashville Software School",
+      "centerLat": 36.127837,
+      "centerLng": -86.726002,
+      "description" : "Very Cool Technical school",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipPHTCr4nX463QJ-iWl_-8_UMLzCn43P7xSPj9TT=w408-h306-k-no",
+      "address" : "301 Plus Park Blvd #300, Nashville, TN 37217",
+      "owner" : "John Wark",
+      "squareFeet" : 1500,
+      "uid": "12345"      
+    },
+    "property04" : {
+      "name": "Burger King",
+      "centerLat": 36.133399,
+      "centerLng": -86.779559,
+      "description" : "Well-known fast-food chain serving grilled burgers, fries & shakes, plus breakfast.",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipOhlZ1XWGxHozfIXITPz8SpVqbCW9zcwIA-SwdO=w426-h240-k-no",
+      "address" : "2011 8th Ave S, Nashville, TN 37204",
+      "owner" : "John B.K. Burgerson",
+      "squareFeet" : 2100,
+      "uid": "67890"      
+    },
+    "property05" : {
+      "name": "MAPCO",
+      "centerLat": 36.152165,
+      "centerLng": -86.837987,
+      "description" : "Convenience-store chain supplying snacks, drinks & sundries. Many sell gas & made-to-order food.",
+      "imageUrl" : "https://geo1.ggpht.com/cbk?panoid=ocADCnKnWTPP5giFFy4wgg&output=thumbnail&cb_client=search.gws-prod.gps&thumb=2&w=408&h=240&yaw=146.58224&pitch=0&thumbfov=100",
+      "address" : "4211 Charlotte Ave, Nashville, TN 37209",
+      "owner" : "Henry Mapco",
+      "squareFeet" : 1900,
+      "uid": "67890"   
+    },
+    "property06" : {
+      "name": "Frothy Monkey",
+      "centerLat": 36.124607,
+      "centerLng": -86.789852,
+      "description" : "Local coffeehouse chain serving breakfast, sandwiches & Southern comfort food in a hip space.",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipNk5pOqU2z4rI5x1qPJzzm7EOr54CKeDPB_lAAo=w408-h241-k-no",
+      "address" : "2509 12th Ave S, Nashville, TN 37204",
+      "owner" : "Frothy Monkey",
+      "squareFeet" : 2400,
+      "uid": "12345"      
+    },
+    "property07" : {
+      "name": "Nashville Zoo at Grassmere",
+      "centerLat": 36.089223,
+      "centerLng": -86.741731,
+      "description" : "Multiple habitats housing a global array of animals, plus a popular playground for kids.",
+      "imageUrl" : "https://media.bizj.us/view/img/9452882/entry-village-sign-jim-bartoo*1024xx900-506-0-47.jpg",
+      "address" : "3777 Nolensville Pike, Nashville, TN 37211",
+      "owner" : "Grassmere",
+      "squareFeet" : 10000,
+      "uid": "12345"   
+    },
+    "property08" : {
+      "name": "The Pharmacy Burger Parlor & Beer Garden",
+      "centerLat": 36.184922,
+      "centerLng": -86.754203,
+      "description" : "Creative selection of burgers & sausages along with an old-time soda fountain & outdoor seating.",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipMbqH59jXxeHYj9A33444VfgXcgxIyV7pBLSiaf=w408-h240-k-no-pi-0-ya341.77295-ro-0-fo100",
+      "address" : "731 Mcferrin Ave, Nashville, TN 37206",
+      "owner" : "Unknown",
+      "squareFeet" : 2000,
+      "uid": "12345"      
+    },
+    "property09" : {
+      "name": "Dickens Turf And Landscape Supply",
+      "centerLat": 36.201472,
+      "centerLng": -86.755322,
+      "description" : "Landscaping supply store",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipM1ZdDLXe4M7jpVj9z_pLwYHrfOUmIlzKb60a95=w640-h240-k-no",
+      "address" : "814 Cherokee Ave, Nashville, TN 37207",
+      "owner" : "Dr. Dickens",
+      "squareFeet" : 2500,
+      "uid": "67890"   
+    },
+    "property10" : {
+      "name": "Jammers Market",
+      "centerLat": 36.201235,
+      "centerLng": -86.758146,
+      "description" : "Grocery store",
+      "imageUrl" : "https://lh5.googleusercontent.com/p/AF1QipO2BoH0zIkeqg0Q1QenN1PJOcJgFK8QdrloiF61=w408-h306-k-no",
+      "address" : "1519 Jones Ave, Nashville, TN 37207",
+      "owner" : "Jimmy Jammers",
+      "squareFeet" : 1400,
+      "uid": "67890"      
+    }
+  }
