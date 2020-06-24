@@ -6,7 +6,7 @@ class NewProperty extends React.Component {
   render() {
     return (
       <div className="NewProperty">
-        <h1>NewProperty Component</h1>
+        <h3>Add New Property</h3>
       </div>
     );
   }

@@ -8,7 +8,7 @@
       "address" : "600 Dr. M.L.K. Jr Blvd, Nashville, TN 37243",
       "owner" : "The People",
       "squareFeet" : 8000,
-      "uid": "12345"      
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
     },
     "property02" : {
       "name": "Batman Building",
@@ -19,7 +19,7 @@
       "address" : "333 Commerce St, Nashville, TN 37219",
       "owner" : "AT&T",
       "squareFeet" : 2200,
-      "uid": "12345"      
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
     },
     "property03" : {
       "name": "Nashville Software School",
@@ -30,7 +30,7 @@
       "address" : "301 Plus Park Blvd #300, Nashville, TN 37217",
       "owner" : "John Wark",
       "squareFeet" : 1500,
-      "uid": "12345"      
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
     },
     "property04" : {
       "name": "Burger King",
@@ -63,7 +63,7 @@
       "address" : "2509 12th Ave S, Nashville, TN 37204",
       "owner" : "Frothy Monkey",
       "squareFeet" : 2400,
-      "uid": "12345"      
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
     },
     "property07" : {
       "name": "Nashville Zoo at Grassmere",
@@ -74,7 +74,7 @@
       "address" : "3777 Nolensville Pike, Nashville, TN 37211",
       "owner" : "Grassmere",
       "squareFeet" : 10000,
-      "uid": "12345"   
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"   
     },
     "property08" : {
       "name": "The Pharmacy Burger Parlor & Beer Garden",
@@ -85,7 +85,7 @@
       "address" : "731 Mcferrin Ave, Nashville, TN 37206",
       "owner" : "Unknown",
       "squareFeet" : 2000,
-      "uid": "12345"      
+      "uid": "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
     },
     "property09" : {
       "name": "Dickens Turf And Landscape Supply",
