@@ -8,7 +8,7 @@
     "imageUrl" : "https://i.stack.imgur.com/3telo.jpg",
     "wasFound" : true,
     "typeId" : "pinType15",
-    "uid" : "12345"      
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"      
   },
   "pin02" : {
     "propertyId": "property01",
@@ -19,7 +19,7 @@
     "imageUrl" : "https://2.bp.blogspot.com/-euGUULQrEs0/TbFip5WDtvI/AAAAAAAADaY/lB7fUTqsKL4/s1600/002b.jpg",
     "wasFound" : false,
     "typeId" : "pinType19",
-    "uid" : "12345"          
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"          
   },
   "pin03" : {
     "propertyId": "property02",
@@ -30,7 +30,7 @@
     "imageUrl" : "https://media.sandiegoreader.com/img/photos/2013/03/19/sidewalk_t670.jpg?b3f6a5d7692ccc373d56e40cf708e3fa67d9af9d%27",
     "wasFound" : true,
     "typeId" : "pinType18",
-    "uid" : "12345"          
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"          
   },
   "pin04" : {
     "propertyId": "property02",
@@ -41,7 +41,7 @@
     "imageUrl" : "https://i.ytimg.com/vi/CRgamDP5-rY/hqdefault.jpg",
     "wasFound" : true,
     "typeId" : "pinType04",
-    "uid" : "12345"          
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"          
   },
   "pin05" : {
     "propertyId": "property03",
@@ -52,7 +52,7 @@
     "imageUrl" : "https://bryantfence.com/wp-content/uploads/2014/05/SURVEYOR-PIN-ORANGE-FLAGGING-TAPE.jpg",
     "wasFound" : true,
     "typeId" : "pinType04",
-    "uid" : "12345"          
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"          
   },
   "pin06" : {
     "propertyId": "property03",
@@ -63,7 +63,7 @@
     "imageUrl" : "https://www.federaltitle.com/wp-content/themes/yootheme/cache/diannesurvey-c862f992.jpeg",
     "wasFound" : true,
     "typeId" : "pinType06",
-    "uid" : "12345"          
+    "uid" : "iOrkMh7iwyQQ8wXkrCAynqsz4DC3"          
   },
   "pin07" : {
     "propertyId": "property04",
