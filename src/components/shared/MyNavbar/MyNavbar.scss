@@ -1,3 +1,17 @@
+@import '../../../styles/variables';
+
 .MyNavbar {
   display: block;
+
+  .navbar-brand {
+    font-size: x-large;
+    font-family: $favFontFamily;
+
+    .pf-logo {
+      height: 32px;
+      margin-top: -4px;
+      margin-right: 1px;
+      pointer-events: none;
+    }
+  }
 }
