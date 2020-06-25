@@ -4,7 +4,7 @@ import firebaseConfig from '../apiKeys.json';
 const baseUrl = firebaseConfig.firebaseKeys.databaseURL;
 
 const getPropertiesByUid = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/properties.json?orderBy="uid"&equilTo="${uid}"`)
+  axios.get(`${baseUrl}/properties.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       const fbProperties = response.data;
       const properties = [];
