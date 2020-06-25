@@ -6,7 +6,7 @@ class EditProperty extends React.Component {
   render() {
     return (
       <div className="EditProperty">
-        <h1>EditProperty Component</h1>
+        <h3>EditProperty Component</h3>
       </div>
     );
   }

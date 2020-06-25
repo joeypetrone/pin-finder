@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import PropertyCard from '../../shared/PropertyCard/PropertyCard';
+
 import authData from '../../../helpers/data/authData';
 import propertyData from '../../../helpers/data/propertyData';
 
@@ -36,14 +38,16 @@ class Home extends React.Component {
     const addPropertyLink = '/property/new';
 
     const buildPropertyCards = properties.map((property) => (
-      <h4>{property.name}</h4>
+      <PropertyCard key={property.id} property={property} removeProperty={this.removeProperty}/>
     ));
 
     return (
       <div className="Home">
         <h3>My Properties</h3>
         <Link className="btn btn-primary" to={addPropertyLink}>Add Property</Link>
-        {buildPropertyCards}
+        <div className="d-flex flex-wrap my-3">
+          {buildPropertyCards}
+        </div>
       </div>
     );
   }

@@ -6,7 +6,7 @@ class SinglePin extends React.Component {
   render() {
     return (
       <div className="SinglePin">
-        <h1>SinglePin Component</h1>
+        <h3>SinglePin Component</h3>
       </div>
     );
   }
