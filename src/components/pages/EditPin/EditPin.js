@@ -6,7 +6,7 @@ class EditPin extends React.Component {
   render() {
     return (
       <div className="EditPin">
-        <h1>EditPin Component</h1>
+        <h3>EditPin Component</h3>
       </div>
     );
   }

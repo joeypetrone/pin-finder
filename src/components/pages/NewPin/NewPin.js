@@ -6,7 +6,7 @@ class NewPin extends React.Component {
   render() {
     return (
       <div className="NewPin">
-        <h1>NewPin Component</h1>
+        <h3>NewPin Component</h3>
       </div>
     );
   }

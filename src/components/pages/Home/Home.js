@@ -38,7 +38,7 @@ class Home extends React.Component {
     const addPropertyLink = '/property/new';
 
     const buildPropertyCards = properties.map((property) => (
-      <PropertyCard key={property.id} property={property}/>
+      <PropertyCard key={property.id} property={property} removeProperty={this.removeProperty}/>
     ));
 
     return (

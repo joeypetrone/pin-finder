@@ -10,6 +10,14 @@ import './PropertyCard.scss';
 class PropertyCard extends React.Component {
   static propTypes = {
     property: propertyShape.propertyShape,
+    removeProperty: PropTypes.func.isRequired,
+  }
+
+  deletePropertyEvent = (e) => {
+    e.preventDefault();
+    const { property, removeProperty } = this.props;
+    const propertyId = property.id;
+    removeProperty(propertyId);
   }
 
   render() {
@@ -26,7 +34,7 @@ class PropertyCard extends React.Component {
             <p className="card-text">{property.description}</p>
             <Link className="btn btn-primary m-1" to={singlePropertyLink}>View</Link>
             <Link className="btn btn-primary m-1" to={editPropertyLink}>Edit</Link>
-            <button className="btn btn-danger m-1">Delete</button>
+            <button className="btn btn-danger m-1" onClick={this.deletePropertyEvent}>Delete</button>
           </div>
         </div>
       </div>
