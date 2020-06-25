@@ -1,12 +1,49 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
+import authData from '../../../helpers/data/authData';
+import propertyData from '../../../helpers/data/propertyData';
+
 import './Home.scss';
 
 class Home extends React.Component {
+  state = {
+    properties: [],
+  }
+
+  getProperties = () => {
+    const uid = authData.getUid();
+    propertyData.getPropertiesByUid(uid)
+      .then((properties) => this.setState({ properties }))
+      .catch((err) => console.error('unable to get properties: ', err));
+  }
+
+  removeProperty = (propertyId) => {
+    propertyData.deleteProperty(propertyId)
+      .then(() => {
+        this.getProperties();
+      })
+      .catch((err) => console.error('unable to delete property: ', err));
+  }
+
+  componentDidMount() {
+    this.getProperties();
+  }
+
   render() {
+    const { properties } = this.state;
+    const addPropertyLink = '/property/new';
+
+    const buildPropertyCards = properties.map((property) => (
+      <h4>{property.name}</h4>
+    ));
+
     return (
       <div className="Home">
         <h3>My Properties</h3>
+        <Link className="btn btn-primary" to={addPropertyLink}>Add Property</Link>
+        {buildPropertyCards}
       </div>
     );
   }
