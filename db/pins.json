@@ -74,7 +74,7 @@
     "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/8/80/UN_prop_marker.jpg",
     "wasFound" : true,
     "typeId" : "pinType13",
-    "uid" : "67890"          
+    "uid" : "5ZBPBorYjShjUmAEFllfxkgGa3F2"          
   },
   "pin08" : {
     "propertyId": "property04",
@@ -85,7 +85,7 @@
     "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/f/f4/United_States_National_Geodetic_Survey_marker_5667.JPG",
     "wasFound" : true,
     "typeId" : "pinType13",
-    "uid" : "67890"        
+    "uid" : "5ZBPBorYjShjUmAEFllfxkgGa3F2"        
   },
   "pin09" : {
     "propertyId": "property05",
@@ -96,7 +96,7 @@
     "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/SurveyCottonSpindleSpike1.jpg/500px-SurveyCottonSpindleSpike1.jpg",
     "wasFound" : true,
     "typeId" : "pinType17",
-    "uid" : "67890"        
+    "uid" : "5ZBPBorYjShjUmAEFllfxkgGa3F2"        
   },
   "pin10" : {
     "propertyId": "property05",
@@ -107,6 +107,6 @@
     "imageUrl" : "https://previews.123rf.com/images/cristicroitoru/cristicroitoru2002/cristicroitoru200200015/140998465-bucharest-romania-%E2%80%93-02-20-2020-bottle-of-stalinskaya-vodka-left-in-the-dirt-in-a-park-.jpg",
     "wasFound" : true,
     "typeId" : "pinType16",
-    "uid" : "67890"        
+    "uid" : "5ZBPBorYjShjUmAEFllfxkgGa3F2"        
   }
 }
