@@ -41,7 +41,7 @@
       "address" : "2011 8th Ave S, Nashville, TN 37204",
       "owner" : "John B.K. Burgerson",
       "squareFeet" : 2100,
-      "uid": "67890"      
+      "uid": "5ZBPBorYjShjUmAEFllfxkgGa3F2"      
     },
     "property05" : {
       "name": "MAPCO",
@@ -52,7 +52,7 @@
       "address" : "4211 Charlotte Ave, Nashville, TN 37209",
       "owner" : "Henry Mapco",
       "squareFeet" : 1900,
-      "uid": "67890"   
+      "uid": "5ZBPBorYjShjUmAEFllfxkgGa3F2"   
     },
     "property06" : {
       "name": "Frothy Monkey",
@@ -96,7 +96,7 @@
       "address" : "814 Cherokee Ave, Nashville, TN 37207",
       "owner" : "Dr. Dickens",
       "squareFeet" : 2500,
-      "uid": "67890"   
+      "uid": "5ZBPBorYjShjUmAEFllfxkgGa3F2"   
     },
     "property10" : {
       "name": "Jammers Market",
@@ -107,6 +107,6 @@
       "address" : "1519 Jones Ave, Nashville, TN 37207",
       "owner" : "Jimmy Jammers",
       "squareFeet" : 1400,
-      "uid": "67890"      
+      "uid": "5ZBPBorYjShjUmAEFllfxkgGa3F2"      
     }
   }
