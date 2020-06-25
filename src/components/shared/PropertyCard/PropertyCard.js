@@ -33,7 +33,7 @@ class PropertyCard extends React.Component {
             <h5 className="card-title">{property.name}</h5>
             <p className="card-text">{property.description}</p>
             <Link className="btn btn-primary m-1" to={singlePropertyLink}>View</Link>
-            <Link className="btn btn-primary m-1" to={editPropertyLink}>Edit</Link>
+            <Link className="btn btn-warning m-1" to={editPropertyLink}>Edit</Link>
             <button className="btn btn-danger m-1" onClick={this.deletePropertyEvent}>Delete</button>
           </div>
         </div>
