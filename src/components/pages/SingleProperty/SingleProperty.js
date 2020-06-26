@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ListGroup } from 'reactstrap';
 
 import propertyData from '../../../helpers/data/propertyData';
+import pinData from '../../../helpers/data/pinData';
 
 import MyMap from '../../shared/MyMap/MyMap';
+import Pins from '../../shared/Pins/Pins';
 
 import './SingleProperty.scss';
 
 class SingleProperty extends React.Component {
   state = {
     property: {},
+    pins: [],
   }
 
   componentDidMount() {
@@ -17,6 +21,10 @@ class SingleProperty extends React.Component {
     propertyData.getSingleProperty(propertyId)
       .then((response) => this.setState({ property: response.data }))
       .catch((err) => console.error('Unable to get single property: ', err));
+
+    pinData.getPinsByPropertyId(propertyId)
+      .then((response) => this.setState({ pins: response }))
+      .catch((err) => console.error('Unable to get pins in single property view: ', err));
   }
 
   removeSingleProperty = (e) => {
@@ -28,10 +36,14 @@ class SingleProperty extends React.Component {
   }
 
   render() {
-    const { property } = this.state;
+    const { property, pins } = this.state;
     const { propertyId } = this.props.match.params;
     const editPropertyLink = `/property/edit/${propertyId}`;
     const addPinLink = `/pin/new/${propertyId}`;
+
+    const buildPinList = pins.map((pin) => (
+      <Pins key={pin.id} pin={pin} />
+    ));
 
     return (
       <div className="SingleProperty">
@@ -41,11 +53,11 @@ class SingleProperty extends React.Component {
           <div className="card-header border-0">
             <img src={property.imageUrl} className="card-img" alt="" />
           </div>
-          <div className="card-block px-2">
+          <div className="card-block px-2 mt-2">
             <h5 className="card-title">Owner: {property.owner}</h5>
             <p className="card-text">Description: {property.description}</p>
           </div>
-          <div className="card-block px-2">
+          <div className="card-block px-2 mt-2">
             <h6 className="card-title">Property Area: {property.squareFeet} SQ.FT.</h6>
             <p className="card-text">Cordinates: {property.centerLat} {property.centerLng}</p>
             <div className="mb-3">
@@ -54,9 +66,17 @@ class SingleProperty extends React.Component {
             </div>
           </div>
         </div>
-        <div className="justify-content-center">
+        <div className="justify-content-center mb-3">
           <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} />
-          <Link className="btn btn-primary" to={addPinLink}>Add Pin</Link>
+          <Link className="btn btn-primary mt-3" to={addPinLink}>Add Pin</Link>
+          {
+            pins[0]
+              ? <h5 className="text-left font-weight-bold">Property Pins</h5>
+              : ''
+          }
+          <ListGroup>
+            {buildPinList}
+          </ListGroup>
         </div>
       </div>
     );
