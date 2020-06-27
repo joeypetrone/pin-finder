@@ -8,6 +8,7 @@ import authData from '../../../helpers/data/authData';
 import propertyData from '../../../helpers/data/propertyData';
 
 import './Home.scss';
+import pinData from '../../../helpers/data/pinData';
 
 class Home extends React.Component {
   state = {
@@ -24,9 +25,18 @@ class Home extends React.Component {
   removeProperty = (propertyId) => {
     propertyData.deleteProperty(propertyId)
       .then(() => {
+        pinData.getPinsByPropertyId(propertyId)
+          .then((pins) => {
+            pins.forEach((pin) => {
+              pinData.deletePin(pin.id)
+                .then(() => {})
+                .catch((err) => console.error('Unable to delete pin with property on Home page: ', err));
+            });
+          })
+          .catch((err) => console.error('Unable to get pins to be deleted with property on Home page: ', err));
         this.getProperties();
       })
-      .catch((err) => console.error('unable to delete property: ', err));
+      .catch((err) => console.error('Unable to delete property on Home page: ', err));
   }
 
   componentDidMount() {

@@ -14,35 +14,57 @@ class SingleProperty extends React.Component {
   state = {
     property: {},
     pins: [],
+    loadMap: false,
   }
 
-  componentDidMount() {
+  getPins = () => {
     const { propertyId } = this.props.match.params;
-    propertyData.getSingleProperty(propertyId)
-      .then((response) => this.setState({ property: response.data }))
-      .catch((err) => console.error('Unable to get single property: ', err));
-
     pinData.getPinsByPropertyId(propertyId)
       .then((response) => this.setState({ pins: response }))
       .catch((err) => console.error('Unable to get pins in single property view: ', err));
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    const { propertyId } = this.props.match.params;
+    propertyData.getSingleProperty(propertyId)
+      .then((response) => this.setState({ property: response.data, loadMap: true }))
+      .catch((err) => console.error('Unable to get single property: ', err));
+
+    this.getPins();
+  }
+
   removeSingleProperty = (e) => {
     e.preventDefault();
+    const { pins } = this.state;
     const removePropertyId = this.props.match.params.propertyId;
     propertyData.deleteProperty(removePropertyId)
-      .then(() => this.props.history.push('/home'))
+      .then(() => {
+        pins.forEach((pin) => {
+          pinData.deletePin(pin.id)
+            .then(() => this.props.history.push('/home'))
+            .catch((err) => console.error('Unable to delete pin in single property view'));
+        });
+      })
       .catch((err) => console.error('Unable to delete property in single view: ', err));
   }
 
+  removePin = (pinId) => {
+    pinData.deletePin(pinId)
+      .then(() => {
+        this.getPins();
+      })
+      .catch((err) => console.error('unable to delete property: ', err));
+  }
+
   render() {
-    const { property, pins } = this.state;
+    const { property, pins, loadMap } = this.state;
     const { propertyId } = this.props.match.params;
     const editPropertyLink = `/property/edit/${propertyId}`;
     const addPinLink = `/pin/new/${propertyId}`;
 
     const buildPinList = pins.map((pin) => (
-      <Pins key={pin.id} pin={pin} />
+      <Pins key={pin.id} pin={pin} removePin={this.removePin}/>
     ));
 
     return (
@@ -67,7 +89,11 @@ class SingleProperty extends React.Component {
           </div>
         </div>
         <div className="justify-content-center mb-3">
-          <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} />
+          {
+            loadMap
+              ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} />
+              : <div className="text-center">Map loading...</div>
+          }
           <Link className="btn btn-primary mt-3" to={addPinLink}>Add Pin</Link>
           {
             pins[0]
