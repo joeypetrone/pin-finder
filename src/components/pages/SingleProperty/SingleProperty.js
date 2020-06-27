@@ -40,11 +40,14 @@ class SingleProperty extends React.Component {
     const removePropertyId = this.props.match.params.propertyId;
     propertyData.deleteProperty(removePropertyId)
       .then(() => {
-        pins.forEach((pin) => {
-          pinData.deletePin(pin.id)
-            .then(() => this.props.history.push('/home'))
-            .catch((err) => console.error('Unable to delete pin in single property view'));
-        });
+        if (pins) {
+          pins.forEach((pin) => {
+            pinData.deletePin(pin.id)
+              .then(() => this.props.history.push('/home'))
+              .catch((err) => console.error('Unable to delete pin in single property view'));
+          });
+        }
+        this.props.history.push('/home');
       })
       .catch((err) => console.error('Unable to delete property in single view: ', err));
   }
