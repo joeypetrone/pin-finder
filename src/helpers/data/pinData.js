@@ -4,7 +4,7 @@ import firebaseConfig from '../apiKeys.json';
 const baseUrl = firebaseConfig.firebaseKeys.databaseURL;
 
 const getPinsByPropertyId = (propertyId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/pins.json?orderBy="propertyId"&equilTo="${propertyId}"`)
+  axios.get(`${baseUrl}/pins.json?orderBy="propertyId"&equalTo="${propertyId}"`)
     .then((response) => {
       const fbPins = response.data;
       const pins = [];
@@ -15,6 +15,7 @@ const getPinsByPropertyId = (propertyId) => new Promise((resolve, reject) => {
           pins.push(fbPins[fbId]);
         });
       }
+
       resolve(pins);
     })
     .catch((err) => reject(err));
