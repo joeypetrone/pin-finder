@@ -16,6 +16,7 @@ class MyMap extends React.Component {
     propertyLng: PropTypes.number.isRequired,
     pinLat: PropTypes.number,
     pinLng: PropTypes.number,
+    pinName: PropTypes.string,
   }
 
   state = {
@@ -28,19 +29,19 @@ class MyMap extends React.Component {
       propertyLng,
       pinLat,
       pinLng,
+      pinName,
     } = this.props;
     const { zoom } = this.state;
 
-    // const setMarker = () => {
-    //     pinLat && pinLng
-    //     ? return
-    //       <Marker position={[pinLat, pinLng]}>
-    //         <Popup>
-    //           <span>ADDRESS: Loading...</span>
-    //         </Popup>
-    //       </Marker>
-    //     :
-    // }
+    let mapMarker = '';
+
+    pinLat && pinLng
+      ? mapMarker = <Marker position={[pinLat, pinLng]}>
+          <Popup>
+            <span>{pinName}</span>
+          </Popup>
+        </Marker>
+      : mapMarker = '';
 
     return (
       <div className="MyMap">
@@ -54,6 +55,7 @@ class MyMap extends React.Component {
                 attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            {mapMarker}
             </Map>
           : <div className="text-center m-4">Data is loading...</div>
         }
