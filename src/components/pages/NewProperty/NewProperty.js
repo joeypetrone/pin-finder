@@ -13,6 +13,11 @@ import MyMap from '../../shared/MyMap/MyMap';
 import './NewProperty.scss';
 
 class NewProperty extends React.Component {
+  currentPosition = (position) => {
+    console.log('Latitude: ', position.lat);
+    console.log('Longitude: ', position.lng);
+  }
+
   render() {
     return (
       <div className="NewProperty w-100">
@@ -68,7 +73,8 @@ class NewProperty extends React.Component {
             </Form>
           </div>
         </div>
-        <MyMap propertyLat={36.133425} propertyLng={-86.779653} />
+        <MyMap propertyLat={36.133425} propertyLng={-86.779653} currentPosition={this.currentPosition} />
+        <button className="btn btn-primary m-3">Save Property</button>
       </div>
     );
   }

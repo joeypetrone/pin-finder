@@ -65,6 +65,7 @@ class SingleProperty extends React.Component {
     const { propertyId } = this.props.match.params;
     const editPropertyLink = `/property/edit/${propertyId}`;
     const addPinLink = `/pin/new/${propertyId}`;
+    const returnToHomeLink = '/home';
 
     const buildPinList = pins.map((pin) => (
       <Pins key={pin.id} pin={pin} removePin={this.removePin}/>
@@ -86,6 +87,7 @@ class SingleProperty extends React.Component {
             <h6 className="card-title">Property Area: {property.squareFeet} SQ.FT.</h6>
             <p className="card-text">Cordinates: {property.centerLat} {property.centerLng}</p>
             <div className="mb-3">
+              <Link className="btn btn-primary m-2" to={returnToHomeLink}><i class="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPropertyLink}>Edit</Link>
               <button className="btn btn-danger m-2" onClick={this.removeSingleProperty}>Delete</button>
             </div>
