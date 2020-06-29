@@ -61,7 +61,7 @@ class SinglePin extends React.Component {
             <p className="card-text">Notes: {pin.notes}</p>
           </div>
           <div className="card-block px-2 mt-2">
-            <h6 className={cardClassName}>Pin was found: {pin.wasFound ? 'Yes' : 'No'}</h6>
+            <h6 className={cardClassName}>{pin.wasFound ? 'Pin was found' : 'Pin was not found'}</h6>
             <p className="card-text">Cordinates: {pin.locationLat} {pin.locationLng}</p>
             <div className="mb-3">
               <Link className="btn btn-warning m-2" to={editPinLink}>Edit</Link>

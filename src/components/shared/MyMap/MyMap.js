@@ -8,6 +8,9 @@ import {
   Popup,
 } from 'react-leaflet';
 
+import Search from 'react-leaflet-search';
+import { CoordinatesControl } from 'react-leaflet-coordinates';
+
 import './MyMap.scss';
 
 class MyMap extends React.Component {
@@ -20,7 +23,7 @@ class MyMap extends React.Component {
   }
 
   state = {
-    zoom: 20,
+    zoom: 18,
   }
 
   render() {
@@ -50,12 +53,15 @@ class MyMap extends React.Component {
           ? <Map
               center={[propertyLat, propertyLng]}
               zoom={zoom}
+              zoomControl={false}
             >
             <TileLayer
                 attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            <CoordinatesControl />
             {mapMarker}
+            <Search position="topleft" zoom={zoom}/>
             </Map>
           : <div className="text-center m-4">Data is loading...</div>
         }

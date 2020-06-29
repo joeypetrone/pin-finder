@@ -71,7 +71,7 @@ class SingleProperty extends React.Component {
     ));
 
     return (
-      <div className="SingleProperty">
+      <div className="SingleProperty w-100">
         <h3>{property.name}</h3>
         <h4>{property.address}</h4>
         <div className="card flex-row flex-wrap justify-content-center">
@@ -100,7 +100,7 @@ class SingleProperty extends React.Component {
           <Link className="btn btn-primary mt-3" to={addPinLink}>Add Pin</Link>
           {
             pins[0]
-              ? <h5 className="text-left font-weight-bold">Property Pins</h5>
+              ? <h5 className="text-left font-weight-bold ml-1">Property Pins</h5>
               : ''
           }
           <ListGroup>
