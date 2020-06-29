@@ -42,6 +42,7 @@ class SinglePin extends React.Component {
     const { property, pin, loadMap } = this.state;
     const { pinId } = this.props.match.params;
     const editPinLink = `/pin/edit/${pinId}`;
+    const returnToPropertyLink = `/property/${pin.propertyId}`;
     let cardClassName = 'card-title';
 
     (pin.wasFound)
@@ -49,7 +50,7 @@ class SinglePin extends React.Component {
       : cardClassName = 'card-title rounded p-1 text-light bg-danger';
 
     return (
-      <div className="SinglePin">
+      <div className="SinglePin w-100">
         <h3>{property.name}</h3>
         <h4>{property.address}</h4>
         <div className='card flex-row flex-wrap justify-content-center'>
@@ -61,9 +62,10 @@ class SinglePin extends React.Component {
             <p className="card-text">Notes: {pin.notes}</p>
           </div>
           <div className="card-block px-2 mt-2">
-            <h6 className={cardClassName}>Pin was found: {pin.wasFound ? 'Yes' : 'No'}</h6>
+            <h6 className={cardClassName}>{pin.wasFound ? 'Pin was found' : 'Pin was not found'}</h6>
             <p className="card-text">Cordinates: {pin.locationLat} {pin.locationLng}</p>
             <div className="mb-3">
+              <Link className="btn btn-primary m-2" to={returnToPropertyLink}><i class="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPinLink}>Edit</Link>
               <button className="btn btn-danger m-2" onClick={this.removeSinglePin}>Delete</button>
             </div>

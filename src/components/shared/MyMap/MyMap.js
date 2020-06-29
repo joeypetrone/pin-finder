@@ -8,6 +8,8 @@ import {
   Popup,
 } from 'react-leaflet';
 
+import Search from 'react-leaflet-search';
+
 import './MyMap.scss';
 
 class MyMap extends React.Component {
@@ -17,10 +19,20 @@ class MyMap extends React.Component {
     pinLat: PropTypes.number,
     pinLng: PropTypes.number,
     pinName: PropTypes.string,
+    currentPosition: PropTypes.func,
   }
 
   state = {
-    zoom: 20,
+    zoom: 18,
+  }
+
+  onMove = (e) => {
+    const { currentPosition } = this.props;
+    const position = e.target.getCenter();
+
+    if (currentPosition) {
+      currentPosition(position);
+    }
   }
 
   render() {
@@ -50,12 +62,14 @@ class MyMap extends React.Component {
           ? <Map
               center={[propertyLat, propertyLng]}
               zoom={zoom}
+              onMoveEnd={this.onMove}
             >
             <TileLayer
                 attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {mapMarker}
+            {/* <Search position="topleft" zoom={zoom}/> */}
             </Map>
           : <div className="text-center m-4">Data is loading...</div>
         }
