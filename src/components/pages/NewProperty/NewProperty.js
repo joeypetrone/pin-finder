@@ -8,9 +8,12 @@ import {
   Input,
 } from 'reactstrap';
 
+import authData from '../../../helpers/data/authData';
+
 import MyMap from '../../shared/MyMap/MyMap';
 
 import './NewProperty.scss';
+import propertyData from '../../../helpers/data/propertyData';
 
 class NewProperty extends React.Component {
   state = {
@@ -59,6 +62,36 @@ class NewProperty extends React.Component {
     const propertyLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0];
     this.setState({ propertyLat });
     this.setState({ propertyLng });
+  }
+
+  saveProperty = (e) => {
+    e.preventDefault();
+    const {
+      propertyName,
+      propertyDescription,
+      propertyImageUrl,
+      propertyAddress,
+      propertyOwner,
+      propertyArea,
+      propertyLat,
+      propertyLng,
+    } = this.state;
+
+    const newProperty = {
+      name: propertyName,
+      description: propertyDescription,
+      imageUrl: propertyImageUrl,
+      address: propertyAddress,
+      owner: propertyOwner,
+      squareFeet: propertyArea,
+      centerLat: propertyLat,
+      centerLng: propertyLng,
+      uid: authData.getUid(),
+    };
+
+    propertyData.postProperty(newProperty)
+      .then(() => this.props.history.push('/home'))
+      .catch((err) => console.error('Unable to post new property: ', err));
   }
 
   render() {
@@ -185,7 +218,7 @@ class NewProperty extends React.Component {
           </div>
         </div>
         <MyMap propertyLat={36.133425} propertyLng={-86.779653} currentPosition={this.currentPosition} />
-        <button className="btn btn-primary m-3">Save Property</button>
+        <button className="btn btn-primary m-3" onClick={this.saveProperty}>Save Property</button>
       </div>
     );
   }
