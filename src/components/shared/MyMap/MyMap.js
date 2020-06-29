@@ -62,14 +62,14 @@ class MyMap extends React.Component {
           ? <Map
               center={[propertyLat, propertyLng]}
               zoom={zoom}
-              onMoveEnd={this.onMove.bind(this)}
+              onMoveEnd={this.onMove}
             >
             <TileLayer
                 attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {mapMarker}
-            <Search position="topleft" zoom={zoom}/>
+            {/* <Search position="topleft" zoom={zoom}/> */}
             </Map>
           : <div className="text-center m-4">Data is loading...</div>
         }
