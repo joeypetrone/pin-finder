@@ -21,6 +21,26 @@ const getPinsByPropertyId = (propertyId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getAllPinTypes = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pinTypes.json`)
+    .then((response) => {
+      const fbPinTypes = response.data;
+      const pinTypes = [];
+
+      if (fbPinTypes) {
+        Object.keys(fbPinTypes).forEach((fbId) => {
+          fbPinTypes[fbId].id = fbId;
+          pinTypes.push(fbPinTypes[fbId]);
+        });
+      }
+
+      resolve(pinTypes);
+    })
+    .catch((err) => reject(err));
+});
+
+const getPinType = (pinTypeId) => axios.get(`${baseUrl}/pinTypes/${pinTypeId}.json`);
+
 const getSinglePin = (pinId) => axios.get(`${baseUrl}/pins/${pinId}.json`);
 
 const postPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
@@ -31,6 +51,8 @@ const putPin = (pinId, updatedPin) => axios.put(`${baseUrl}/pins/${pinId}.json`,
 
 export default {
   getPinsByPropertyId,
+  getAllPinTypes,
+  getPinType,
   getSinglePin,
   postPin,
   deletePin,
