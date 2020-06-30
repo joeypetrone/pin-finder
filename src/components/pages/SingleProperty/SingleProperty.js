@@ -27,6 +27,7 @@ class SingleProperty extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     const { propertyId } = this.props.match.params;
+
     propertyData.getSingleProperty(propertyId)
       .then((response) => this.setState({ property: response.data, loadMap: true }))
       .catch((err) => console.error('Unable to get single property: ', err));
@@ -87,7 +88,7 @@ class SingleProperty extends React.Component {
             <h6 className="card-title">Property Area: {property.squareFeet} SQ.FT.</h6>
             <p className="card-text">Cordinates: {property.centerLat} {property.centerLng}</p>
             <div className="mb-3">
-              <Link className="btn btn-primary m-2" to={returnToHomeLink}><i class="fas fa-arrow-circle-left"></i> Back</Link>
+              <Link className="btn btn-primary m-2" to={returnToHomeLink}><i className="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPropertyLink}>Edit</Link>
               <button className="btn btn-danger m-2" onClick={this.removeSingleProperty}>Delete</button>
             </div>

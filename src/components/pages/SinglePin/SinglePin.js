@@ -13,6 +13,7 @@ class SinglePin extends React.Component {
     property: {},
     pin: {},
     loadMap: false,
+    pinType: '',
   }
 
   componentDidMount() {
@@ -22,7 +23,18 @@ class SinglePin extends React.Component {
       .then((response) => {
         const pin = response.data;
         propertyData.getSingleProperty(pin.propertyId)
-          .then((property) => this.setState({ property: property.data, pin, loadMap: true }))
+          .then((property) => {
+            pinData.getPinType(pin.typeId)
+              .then((pinType) => {
+                this.setState({
+                  property: property.data,
+                  pin,
+                  loadMap: true,
+                  pinType: pinType.data.title,
+                });
+              })
+              .catch((err) => console.error('Unable to get pin type in pin single view: ', err));
+          })
           .catch((err) => console.error('Unable to get single property for single pin: ', err));
       })
       .catch((err) => console.error('Unable to get single pin: ', err));
@@ -39,7 +51,13 @@ class SinglePin extends React.Component {
   }
 
   render() {
-    const { property, pin, loadMap } = this.state;
+    const {
+      property,
+      pin,
+      loadMap,
+      pinType,
+    } = this.state;
+
     const { pinId } = this.props.match.params;
     const editPinLink = `/pin/edit/${pinId}`;
     const returnToPropertyLink = `/property/${pin.propertyId}`;
@@ -60,12 +78,13 @@ class SinglePin extends React.Component {
           <div className="card-block px-2 mt-2">
             <h5 className="card-title">Pin: {pin.name}</h5>
             <p className="card-text">Notes: {pin.notes}</p>
+            <p className="card-text">Pin Type: {pinType}</p>
           </div>
           <div className="card-block px-2 mt-2">
             <h6 className={cardClassName}>{pin.wasFound ? 'Pin was found' : 'Pin was not found'}</h6>
-            <p className="card-text">Cordinates: {pin.locationLat} {pin.locationLng}</p>
+            <p className="card-text">Coordinates: {pin.locationLat} {pin.locationLng}</p>
             <div className="mb-3">
-              <Link className="btn btn-primary m-2" to={returnToPropertyLink}><i class="fas fa-arrow-circle-left"></i> Back</Link>
+              <Link className="btn btn-primary m-2" to={returnToPropertyLink}><i className="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPinLink}>Edit</Link>
               <button className="btn btn-danger m-2" onClick={this.removeSinglePin}>Delete</button>
             </div>

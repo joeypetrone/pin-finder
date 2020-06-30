@@ -9,11 +9,11 @@ import {
 } from 'reactstrap';
 
 import authData from '../../../helpers/data/authData';
+import propertyData from '../../../helpers/data/propertyData';
 
 import MyMap from '../../shared/MyMap/MyMap';
 
 import './NewProperty.scss';
-import propertyData from '../../../helpers/data/propertyData';
 
 class NewProperty extends React.Component {
   state = {
@@ -25,6 +25,10 @@ class NewProperty extends React.Component {
     propertyArea: '',
     propertyLat: '',
     propertyLng: '',
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   nameChange = (e) => {
@@ -44,7 +48,8 @@ class NewProperty extends React.Component {
 
   areaChange = (e) => {
     e.preventDefault();
-    this.setState({ propertyArea: e.target.value });
+    const numberValue = e.target.value * 1;
+    this.setState({ propertyArea: numberValue });
   }
 
   imageUrlChange = (e) => {
@@ -58,8 +63,8 @@ class NewProperty extends React.Component {
   }
 
   currentPosition = (position) => {
-    const propertyLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0];
-    const propertyLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0];
+    const propertyLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
+    const propertyLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     this.setState({ propertyLat });
     this.setState({ propertyLng });
   }
@@ -122,7 +127,7 @@ class NewProperty extends React.Component {
                   value={propertyName}
                   onChange={this.nameChange}
                 />
-                <Label for="newPropertyAddress" className="font-weight-bold mt-2 ml-1">Address: </Label>
+                <Label for="new-property-address" className="font-weight-bold mt-2 ml-1">Address: </Label>
                 <Input
                   type="text"
                   name="address"
@@ -137,7 +142,7 @@ class NewProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-md-4 col-sm-12">
             <Form>
               <FormGroup>
-                <Label for="newPropertyOwner" className="font-weight-bold mt-2 ml-1">Owner: </Label>
+                <Label for="new-property-owner" className="font-weight-bold mt-2 ml-1">Owner: </Label>
                 <Input
                   type="text"
                   name="owner"
@@ -146,7 +151,7 @@ class NewProperty extends React.Component {
                   value={propertyOwner}
                   onChange={this.ownerChange}
                 />
-                <Label for="newPropertyArea" className="font-weight-bold mt-2 ml-1">Property Area: </Label>
+                <Label for="new-property-area" className="font-weight-bold mt-2 ml-1">Property Area: </Label>
                 <InputGroup>
                   <Input
                     type="number"
@@ -165,7 +170,7 @@ class NewProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-md-4 col-sm-12">
           <Form>
               <FormGroup>
-                <Label for="newPropertyImageUrl" className="font-weight-bold mt-2 ml-1">Image Url: </Label>
+                <Label for="new-property-image-url" className="font-weight-bold mt-2 ml-1">Image Url: </Label>
                 <Input
                   type="text"
                   name="imageUrl"
@@ -176,7 +181,7 @@ class NewProperty extends React.Component {
                   />
                 <FormGroup row className="mt-2">
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="newPropertyLatitude" className="font-weight-bold ml-1">Latitude: </Label>
+                    <Label for="new-property-latitude" className="font-weight-bold ml-1">Latitude: </Label>
                     <Input
                       type="number"
                       name="latitude"
@@ -187,7 +192,7 @@ class NewProperty extends React.Component {
                     />
                   </div>
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="newPropertylongitude" className="font-weight-bold ml-1">Longitude: </Label>
+                    <Label for="new-property-longitude" className="font-weight-bold ml-1">Longitude: </Label>
                     <Input
                       type="number"
                       name="longitude"
@@ -204,7 +209,7 @@ class NewProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-12">
           <Form>
               <FormGroup>
-                <Label for="newPropertyDescription" className="font-weight-bold mt-2 ml-1">Description: </Label>
+                <Label for="new-property-description" className="font-weight-bold mt-2 ml-1">Description: </Label>
                 <Input
                   type="textarea"
                   name="description"
