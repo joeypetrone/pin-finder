@@ -17,6 +17,8 @@ import './EditProperty.scss';
 
 class EditProperty extends React.Component {
   state = {
+    property: {},
+    loadMap: false,
     propertyName: '',
     propertyDescription: '',
     propertyImageUrl: '',
@@ -29,6 +31,24 @@ class EditProperty extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    const { propertyId } = this.props.match.params;
+    propertyData.getSingleProperty(propertyId)
+      .then((response) => {
+        const property = response.data;
+        this.setState({
+          property,
+          loadMap: true,
+          propertyName: property.name,
+          propertyDescription: property.description,
+          propertyImageUrl: property.imageUrl,
+          propertyAddress: property.address,
+          propertyOwner: property.owner,
+          propertyArea: property.squareFeet,
+          propertyLat: property.centerLat,
+          propertyLng: property.centerLng,
+        });
+      })
+      .catch((err) => console.error('Unable to get property on edit property page: ', err));
   }
 
   nameChange = (e) => {
@@ -69,7 +89,9 @@ class EditProperty extends React.Component {
     this.setState({ propertyLng });
   }
 
-  saveProperty = (e) => {
+  updateProperty = (e) => {
+    const { propertyId } = this.props.match.params;
+
     e.preventDefault();
     const {
       propertyName,
@@ -82,7 +104,7 @@ class EditProperty extends React.Component {
       propertyLng,
     } = this.state;
 
-    const newProperty = {
+    const updatedProperty = {
       name: propertyName,
       description: propertyDescription,
       imageUrl: propertyImageUrl,
@@ -94,13 +116,15 @@ class EditProperty extends React.Component {
       uid: authData.getUid(),
     };
 
-    propertyData.postProperty(newProperty)
+    propertyData.putProperty(propertyId, updatedProperty)
       .then(() => this.props.history.push('/home'))
-      .catch((err) => console.error('Unable to post new property: ', err));
+      .catch((err) => console.error('Unable to put updated property: ', err));
   }
 
   render() {
     const {
+      property,
+      loadMap,
       propertyName,
       propertyDescription,
       propertyImageUrl,
@@ -113,26 +137,26 @@ class EditProperty extends React.Component {
 
     return (
       <div className="EditProperty w-100">
-        <h3>Add New Property</h3>
+        <h3>{property.name}</h3>
+        <h4>{property.address}</h4>
+        <h3>Edit Property</h3>
         <div className="card flex-row flex-wrap justify-content-center">
           <div className="card-block px-2 text-left col-md-4 col-sm-12">
             <Form>
               <FormGroup>
-                <Label for="new-property-name" className="font-weight-bold mt-2 ml-1">Name: </Label>
+                <Label for="update-property-name" className="font-weight-bold mt-2 ml-1">Name: </Label>
                 <Input
                   type="text"
                   name="name"
-                  id="new-property-name"
-                  placeholder="Burger King"
+                  id="update-property-name"
                   value={propertyName}
                   onChange={this.nameChange}
                 />
-                <Label for="new-property-address" className="font-weight-bold mt-2 ml-1">Address: </Label>
+                <Label for="update-property-address" className="font-weight-bold mt-2 ml-1">Address: </Label>
                 <Input
                   type="text"
                   name="address"
-                  id="new-property-address"
-                  placeholder="2011 8th Ave S, Nashville, TN 37204"
+                  id="update-property-address"
                   value={propertyAddress}
                   onChange={this.addressChange}
                 />
@@ -142,23 +166,21 @@ class EditProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-md-4 col-sm-12">
             <Form>
               <FormGroup>
-                <Label for="new-property-owner" className="font-weight-bold mt-2 ml-1">Owner: </Label>
+                <Label for="update-property-owner" className="font-weight-bold mt-2 ml-1">Owner: </Label>
                 <Input
                   type="text"
                   name="owner"
-                  id="new-property-owner"
-                  placeholder="Restaurant Brands International"
+                  id="update-property-owner"
                   value={propertyOwner}
                   onChange={this.ownerChange}
                 />
-                <Label for="new-property-area" className="font-weight-bold mt-2 ml-1">Property Area: </Label>
+                <Label for="update-property-area" className="font-weight-bold mt-2 ml-1">Property Area: </Label>
                 <InputGroup>
                   <Input
                     type="number"
                     name="area"
-                    id="new-property-area"
+                    id="update-property-area"
                     className="col-6"
-                    placeholder="10000"
                     value={propertyArea}
                     onChange={this.areaChange}
                   />
@@ -170,34 +192,31 @@ class EditProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-md-4 col-sm-12">
           <Form>
               <FormGroup>
-                <Label for="new-property-image-url" className="font-weight-bold mt-2 ml-1">Image Url: </Label>
+                <Label for="update-property-image-url" className="font-weight-bold mt-2 ml-1">Image Url: </Label>
                 <Input
                   type="text"
                   name="imageUrl"
-                  id="new-property-image-url"
-                  placeholder="https://cdn.usarestaurants.info/assets/uploads/3f4416b643aaf9b8f18c92a1ba473985_-united-states-tennessee-davidson-county-nashville-burger-king-160318htm.jpg"
+                  id="update-property-image-url"
                   value={propertyImageUrl}
                   onChange={this.imageUrlChange}
                   />
                 <FormGroup row className="mt-2">
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="new-property-latitude" className="font-weight-bold ml-1">Latitude: </Label>
+                    <Label for="update-property-latitude" className="font-weight-bold ml-1">Latitude: </Label>
                     <Input
                       type="number"
                       name="latitude"
-                      id="new-property-latitude"
-                      placeholder="36.133425"
+                      id="update-property-latitude"
                       value={propertyLat}
                       disabled
                     />
                   </div>
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="new-property-longitude" className="font-weight-bold ml-1">Longitude: </Label>
+                    <Label for="update-property-longitude" className="font-weight-bold ml-1">Longitude: </Label>
                     <Input
                       type="number"
                       name="longitude"
-                      id="new-property-longitude"
-                      placeholder="-86.779653"
+                      id="update-property-longitude"
                       value={propertyLng}
                       disabled
                     />
@@ -209,12 +228,11 @@ class EditProperty extends React.Component {
           <div className="card-block px-2 px-0 text-left col-12">
           <Form>
               <FormGroup>
-                <Label for="new-property-description" className="font-weight-bold mt-2 ml-1">Description: </Label>
+                <Label for="update-property-description" className="font-weight-bold mt-2 ml-1">Description: </Label>
                 <Input
                   type="textarea"
                   name="description"
-                  id="new-property-description"
-                  placeholder="Well-known fast-food chain serving grilled burgers, fries & shakes, plus breakfast."
+                  id="update-property-description"
                   value={propertyDescription}
                   onChange={this.descriptionChange}
                   />
@@ -222,8 +240,12 @@ class EditProperty extends React.Component {
             </Form>
           </div>
         </div>
-        <MyMap propertyLat={36.133425} propertyLng={-86.779653} currentPosition={this.currentPosition} />
-        <button className="btn btn-primary m-3" onClick={this.saveProperty}>Save Property</button>
+        {
+          loadMap
+            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} currentPosition={this.currentPosition}/>
+            : <div className="text-center">Map loading...</div>
+        }
+        <button className="btn btn-primary m-3" onClick={this.updateProperty}>Update Property</button>
       </div>
     );
   }
