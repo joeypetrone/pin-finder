@@ -216,7 +216,7 @@ class EditPin extends React.Component {
         </div>
         {
           loadMap
-            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition}/>
+            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition} pinName={pinName}/>
             : <div className="text-center">Map loading...</div>
         }
         <button className="btn btn-primary m-3" onClick={this.updatePin}>Update Pin</button>
