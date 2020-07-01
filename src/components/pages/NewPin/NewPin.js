@@ -137,7 +137,7 @@ class NewPin extends React.Component {
                   onChange={this.nameChange}
                 />
                 <Label for="new-pin-type" className="font-weight-bold mt-2 ml-1">Pin Type: </Label>
-                <select className="custom-select" id="new-pin-type" onChange={this.typeChange} value={'default'}>
+                <select className="custom-select" id="new-pin-type" onChange={this.typeChange} defaultValue={'default'}>
                   <option value='default'>Select Type</option>
                   {
                     pinTypes.map((pinType) => <option key={pinType.id} className="dropdown-item" id={pinType.id} value={pinType.id}>{pinType.title}</option>)
