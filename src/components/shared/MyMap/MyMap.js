@@ -19,7 +19,7 @@ class MyMap extends React.Component {
     pinName: PropTypes.string,
     currentPosition: PropTypes.func,
     markerPosition: PropTypes.func,
-    newPin: PropTypes.bool,
+    pin: PropTypes.bool,
   }
 
   state = {
@@ -36,8 +36,8 @@ class MyMap extends React.Component {
   }
 
   setMarker = (e) => {
-    const { markerPosition, newPin } = this.props;
-    if (newPin) {
+    const { markerPosition, pin } = this.props;
+    if (pin) {
       const clickPosition = { lat: e.latlng.lat, lng: e.latlng.lng };
 
       markerPosition(clickPosition);
