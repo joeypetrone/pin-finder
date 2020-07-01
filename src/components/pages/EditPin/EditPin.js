@@ -38,25 +38,27 @@ class EditPin extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    const { propertyId } = this.props.match.params;
-    propertyData.getSingleProperty(propertyId)
-      .then((property) => {
-        const { pinId } = this.props.match.params;
-        pinData.getSinglePin(pinId)
-          .then((pin) => {
+    const { pinId } = this.props.match.params;
+
+    pinData.getSinglePin(pinId)
+      .then((response) => {
+        const pin = response.data;
+
+        propertyData.getSingleProperty(pin.propertyId)
+          .then((property) => {
             pinData.getAllPinTypes()
               .then((pinTypes) => this.setState({
                 property: property.data,
                 loadMap: true,
-                pinPropertyId: pin.data.propertyId,
+                pinPropertyId: pin.propertyId,
                 pinTypes,
-                pinName: pin.data.name,
-                pinImageUrl: pin.data.imageUrl,
-                pinNotes: pin.data.notes,
-                pinLat: pin.data.locationLat,
-                pinLng: pin.data.locationLng,
-                wasFound: pin.data.wasFound,
-                pinTypeId: pin.data.typeId,
+                pinName: pin.name,
+                pinImageUrl: pin.imageUrl,
+                pinNotes: pin.notes,
+                pinLat: pin.locationLat,
+                pinLng: pin.locationLng,
+                wasFound: pin.wasFound,
+                pinTypeId: pin.typeId,
               }))
               .catch((err) => console.error('Unable to get all pin types on edit pin page: ', err));
           })
@@ -130,6 +132,7 @@ class EditPin extends React.Component {
       pinNotes,
       pinLat,
       pinLng,
+      pinTypeId,
     } = this.state;
 
     return (
@@ -150,8 +153,8 @@ class EditPin extends React.Component {
                   onChange={this.nameChange}
                 />
                 <Label for="edit-pin-type" className="font-weight-bold mt-2 ml-1">Pin Type: </Label>
-                <select className="custom-select" id="edit-pin-type" onChange={this.typeChange}>
-                  <option selected>Select Type</option>
+                <select className="custom-select" id="edit-pin-type" onChange={this.typeChange} value={pinTypeId}>
+                  <option value='0'>Select Type</option>
                   {
                     pinTypes.map((pinType) => <option key={pinType.id} className="dropdown-item" id={pinType.id} value={pinType.id}>{pinType.title}</option>)
                   }
@@ -213,7 +216,7 @@ class EditPin extends React.Component {
         </div>
         {
           loadMap
-            ? <MyMap propertyLat={pinLat} propertyLng={pinLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition}/>
+            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition}/>
             : <div className="text-center">Map loading...</div>
         }
         <button className="btn btn-primary m-3" onClick={this.updatePin}>Update Pin</button>
