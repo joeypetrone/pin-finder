@@ -48,7 +48,7 @@ class NewPin extends React.Component {
             pinPropertyId: propertyId,
             pinTypes,
           }))
-          .catch();
+          .catch((err) => console.error('Unable to get all pin types on new pin page: ', err));
       })
       .catch((err) => console.error('Unable to get property on new pin page: ', err));
   }
@@ -137,8 +137,8 @@ class NewPin extends React.Component {
                   onChange={this.nameChange}
                 />
                 <Label for="new-pin-type" className="font-weight-bold mt-2 ml-1">Pin Type: </Label>
-                <select className="custom-select" id="new-pin-type" onChange={this.typeChange}>
-                  <option selected>Select Type</option>
+                <select className="custom-select" id="new-pin-type" onChange={this.typeChange} defaultValue={'default'}>
+                  <option value='default'>Select Type</option>
                   {
                     pinTypes.map((pinType) => <option key={pinType.id} className="dropdown-item" id={pinType.id} value={pinType.id}>{pinType.title}</option>)
                   }
@@ -176,22 +176,22 @@ class NewPin extends React.Component {
                   />
                 <FormGroup row className="mt-2">
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="newPropertyLatitude" className="font-weight-bold ml-1">Latitude: </Label>
+                    <Label for="new-pin-latitude" className="font-weight-bold ml-1">Latitude: </Label>
                     <Input
                       type="number"
                       name="latitude"
-                      id="new-property-latitude"
+                      id="new-pin-latitude"
                       placeholder="36.133425"
                       value={pinLat}
                       disabled
                     />
                   </div>
                   <div className="col-md-6 col-sm-3 w-50">
-                    <Label for="newPropertylongitude" className="font-weight-bold ml-1">Longitude: </Label>
+                    <Label for="new-pin-longitude" className="font-weight-bold ml-1">Longitude: </Label>
                     <Input
                       type="number"
                       name="longitude"
-                      id="new-property-longitude"
+                      id="new-pin-longitude"
                       placeholder="-86.779653"
                       value={pinLng}
                       disabled
@@ -204,7 +204,7 @@ class NewPin extends React.Component {
         </div>
         {
           loadMap
-            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} newPin={true} markerPosition={this.markerPosition}/>
+            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition}/>
             : <div className="text-center">Map loading...</div>
         }
         <button className="btn btn-primary m-3" onClick={this.savePin}>Save Pin</button>
