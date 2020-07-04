@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pin Finder
+## Summary
+This was the front end final capstone project that was used to display all the milestones that where throughout the front end side of the full stack development course provided by Nashville Software School. In this project, it was intended that I utilize Google Firebase as a database and Create/Read/Update/Delete that data using React framwork methodology.
 
-## Available Scripts
+The idea of this project was derived from land surveying and the need to find proper monumentation of each property that is surveyed. In some ways this app could provide a short cut in the reconnaissance of these property corners which are also called property pins. Generally the techinicain would need to set up survey equipment in order to pin point a property corner location. This app is in now way try to replicate that process. It's intention is to assist the technicians and make this a more streamlined process. It also creates a history of the property and allows you to save pin locations and provide field notes about the property pins.
 
-In the project directory, you can run:
+## Technology
+#### Base Languages
+- Vanilla JavaScript
+- React
+- HTML5
+- CSS3
 
-### `npm start`
+#### Plugins
+- Leaflet
+- Bootstrap
+- Reactstrap
+- React DOM
+- React Router DOM
+- Prop Types
+- Google Fonts
+- Font Awesome
+- Sass
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Database
+- Firebase
+- Axios
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Development Tools
+- Chrome DevTools
+- Git/GitHub
+- Visual Studio Code
 
-### `npm test`
+## Features
+- 1
+- 2
+- 3
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
+#### Home Page
+![Name](url)
+#### New Property Form
+![Name](url)
+#### New Pin Form
+![Name](url)
+#### Single Property View
+![Name](url)
+#### Single Pin View
+![Name](url)
+#### Edit Property Form
+![Name](url)
+#### Edit Pin Form
+![Name](url)
+![Responsive Design](public/images/responsive-design-02.png)
 
-### `npm run build`
+## About The Logo
+![Twemoji Billed Cap](public\favicon.ico)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The billed cap is representitive of the field technicians that work in land surveying. In my experience the technicians would always wear a hat to keep the sun off their faces. I wanted to use a logo that was easy to implement and was free to use. That's when I discovered that Twitter's Twemojis are completely open source under the creative commons lisence CC-BY 4.0. This allowed me to save time when branding the app. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Copyright 2020 Twitter, Inc and other contributors
+Code licensed under the MIT License: http://opensource.org/licenses/MIT
+Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 
-### `npm run eject`
+## How To Run
+1. Clone down this repo
+1. Make sure you have  http-serve installed via npm. If not, get it [HERE](https://npmjs.com/package/http-server).
+1. On your command line run `hs -p 9999`
+1. In your browser go to `http://localhost:9999`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contributors
+* Joey Petrone - [joeydev.net](https://joeydev.net)
