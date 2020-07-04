@@ -32,26 +32,28 @@ The idea of this project was derived from land surveying and the need to find pr
 - Visual Studio Code
 
 ## Features
-- 1
-- 2
-- 3
+- Create, Read, Update, and Delete your properties
+- Create, Read, Update, and Delete pins for each property
+- Use Leaflet Map to Create and Update property and pin locations 
+- Use Leaflet Map Marker to set a visual location on the map for each pin
 
 ## Screenshots
 #### Home Page
 ![Home Page](public/images/home-page.png)
 #### New Property Form
-![New Property Form](public/images/add-new-property.png)
+![New Property Form](public/images/new-property-form.png)
 #### New Pin Form
-![New Pin Form](public/images/add-new-pin.png)
+![New Pin Form](public/images/new-pin-form.png)
 #### Single Property View
-![Name](url)
+![Single Property View](public/images/single-property-view.png)
 #### Single Pin View
-![Name](url)
+![Single Pin View](public/images/single-pin-view.png)
 #### Edit Property Form
-![Name](url)
+![Edit Property Form](public/images/edit-property-form.png)
 #### Edit Pin Form
-![Name](url)
-![Responsive Design](public/images/responsive-design-02.png)
+![Edit Pin Form](public/images/edit-pin-form.png)
+#### Responsive Design
+![Responsive Design](public/images/home-page-responsive.png)
 
 ## About The Logo
 ![Twemoji Billed Cap](public\favicon.ico)

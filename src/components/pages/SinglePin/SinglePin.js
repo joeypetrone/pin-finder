@@ -76,13 +76,13 @@ class SinglePin extends React.Component {
             <img src={pin.imageUrl} className="card-img" alt="" />
           </div>
           <div className="card-block px-2 mt-2">
-            <h5 className="card-title">Pin: {pin.name}</h5>
-            <p className="card-text">Notes: {pin.notes}</p>
-            <p className="card-text">Pin Type: {pinType}</p>
+            <h5 className="card-title"><span className="font-weight-bold">{pin.name}</span></h5>
+            <p className="card-text"><span className="font-weight-bold mr-1">Notes: </span>{pin.notes}</p>
+            <p className="card-text"><span className="font-weight-bold mr-1">Pin Type: </span>{pinType}</p>
           </div>
           <div className="card-block px-2 mt-2">
             <h6 className={cardClassName}>{pin.wasFound ? 'Pin was found' : 'Pin was not found'}</h6>
-            <p className="card-text">Coordinates: {pin.locationLat} {pin.locationLng}</p>
+            <p className="card-text p-1 px-2 border rounded bg-light"><span className="font-weight-bold mr-1">Coordinates: </span>{pin.locationLat} {pin.locationLng}</p>
             <div className="mb-3">
               <Link className="btn btn-primary m-2" to={returnToPropertyLink}><i className="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPinLink}>Edit</Link>

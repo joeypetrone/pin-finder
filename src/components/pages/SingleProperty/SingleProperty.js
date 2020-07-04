@@ -81,12 +81,12 @@ class SingleProperty extends React.Component {
             <img src={property.imageUrl} className="card-img" alt="" />
           </div>
           <div className="card-block px-2 mt-2">
-            <h5 className="card-title">Owner: {property.owner}</h5>
-            <p className="card-text">Description: {property.description}</p>
+            <h5 className="card-title"><span className="font-weight-bold mr-1">Owner: </span>{property.owner}</h5>
+            <p className="card-text"><span className="font-weight-bold mr-1">Description: </span>{property.description}</p>
           </div>
           <div className="card-block px-2 mt-2">
-            <h6 className="card-title">Property Area: {property.squareFeet} SQ.FT.</h6>
-            <p className="card-text p-1 px-2 border rounded">Cordinates: {property.centerLat} {property.centerLng}</p>
+            <h6 className="card-title"><span className="font-weight-bold mr-1">Property Area: </span>{property.squareFeet} SQ.FT.</h6>
+            <p className="card-text p-1 px-2 border rounded bg-light"><span className="font-weight-bold mr-1">Cordinates: </span>{property.centerLat} {property.centerLng}</p>
             <div className="mb-3">
               <Link className="btn btn-primary m-2" to={returnToHomeLink}><i className="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPropertyLink}>Edit</Link>
