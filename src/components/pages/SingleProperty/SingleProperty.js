@@ -86,7 +86,7 @@ class SingleProperty extends React.Component {
           </div>
           <div className="card-block px-2 mt-2">
             <h6 className="card-title">Property Area: {property.squareFeet} SQ.FT.</h6>
-            <p className="card-text">Cordinates: {property.centerLat} {property.centerLng}</p>
+            <p className="card-text p-1 px-2 border rounded">Cordinates: {property.centerLat} {property.centerLng}</p>
             <div className="mb-3">
               <Link className="btn btn-primary m-2" to={returnToHomeLink}><i className="fas fa-arrow-circle-left"></i> Back</Link>
               <Link className="btn btn-warning m-2" to={editPropertyLink}>Edit</Link>

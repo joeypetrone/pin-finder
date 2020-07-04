@@ -38,11 +38,11 @@ The idea of this project was derived from land surveying and the need to find pr
 
 ## Screenshots
 #### Home Page
-![Name](url)
+![Home Page](public/images/home-page.png)
 #### New Property Form
-![Name](url)
+![New Property Form](public/images/add-new-property.png)
 #### New Pin Form
-![Name](url)
+![New Pin Form](public/images/add-new-pin.png)
 #### Single Property View
 ![Name](url)
 #### Single Pin View
