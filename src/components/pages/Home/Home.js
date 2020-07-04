@@ -52,7 +52,7 @@ class Home extends React.Component {
     ));
 
     return (
-      <div className="Home">
+      <div className="Home w-100">
         <h3>My Properties</h3>
         <Link className="btn btn-primary" to={addPropertyLink}>Add Property</Link>
         <div className="d-flex flex-wrap my-3">
