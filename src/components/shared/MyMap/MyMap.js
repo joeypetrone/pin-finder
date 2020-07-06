@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
+  withLeaflet,
   Map,
   TileLayer,
   Marker,
   Popup,
 } from 'react-leaflet';
+
+import Search from '../Search/Search';
 
 import './MyMap.scss';
 
@@ -54,6 +57,8 @@ class MyMap extends React.Component {
     } = this.props;
     const { zoom } = this.state;
 
+    const WrappedSearch = withLeaflet(Search);
+
     let mapMarker = '';
 
     pinLat && pinLng
@@ -74,11 +79,12 @@ class MyMap extends React.Component {
               onMoveEnd={this.onMove}
               onclick={this.setMarker}
             >
-            <TileLayer
+              <TileLayer
                 attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {mapMarker}
+              />
+              {mapMarker}
+              <WrappedSearch />
             </Map>
           : <div className="text-center m-4">Data is loading...</div>
         }
