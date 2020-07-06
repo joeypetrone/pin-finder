@@ -67,19 +67,24 @@ class SingleProperty extends React.Component {
     const editPropertyLink = `/property/edit/${propertyId}`;
     const addPinLink = `/pin/new/${propertyId}`;
     const returnToHomeLink = '/home';
+    let propertyCardHeader = '';
 
     const buildPinList = pins.map((pin) => (
       <Pins key={pin.id} pin={pin} removePin={this.removePin}/>
     ));
+
+    (property.imageUrl)
+      ? propertyCardHeader = <div className="card-header border-0">
+          <img src={property.imageUrl} className="card-img" alt="" />
+        </div>
+      : propertyCardHeader = '';
 
     return (
       <div className="SingleProperty w-100">
         <h3>{property.name}</h3>
         <h4>{property.address}</h4>
         <div className="card flex-row flex-wrap justify-content-center">
-          <div className="card-header border-0">
-            <img src={property.imageUrl} className="card-img" alt="" />
-          </div>
+          {propertyCardHeader}
           <div className="card-block px-2 mt-2">
             <h5 className="card-title"><span className="font-weight-bold mr-1">Owner: </span>{property.owner}</h5>
             <p className="card-text"><span className="font-weight-bold mr-1">Description: </span>{property.description}</p>
