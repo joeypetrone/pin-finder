@@ -23,8 +23,8 @@ class NewProperty extends React.Component {
     propertyAddress: '',
     propertyOwner: '',
     propertyArea: '',
-    propertyLat: '',
-    propertyLng: '',
+    propertyLat: 36.133425,
+    propertyLng: -86.779653,
   }
 
   componentDidMount() {
