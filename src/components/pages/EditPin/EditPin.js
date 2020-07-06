@@ -16,6 +16,8 @@ import './EditPin.scss';
 
 class EditPin extends React.Component {
   state = {
+    initLat: 0,
+    initLng: 0,
     pinTypes: [],
     property: {},
     loadMap: false,
@@ -57,6 +59,8 @@ class EditPin extends React.Component {
                 pinNotes: pin.notes,
                 pinLat: pin.locationLat,
                 pinLng: pin.locationLng,
+                initLat: pin.locationLat,
+                initLng: pin.locationLng,
                 wasFound: pin.wasFound,
                 pinTypeId: pin.typeId,
               }))
@@ -124,6 +128,8 @@ class EditPin extends React.Component {
 
   render() {
     const {
+      initLat,
+      initLng,
       pinTypes,
       property,
       loadMap,
@@ -216,7 +222,7 @@ class EditPin extends React.Component {
         </div>
         {
           loadMap
-            ? <MyMap propertyLat={property.centerLat} propertyLng={property.centerLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition} pinName={pinName}/>
+            ? <MyMap propertyLat={initLat} propertyLng={initLng} pinLat={pinLat} pinLng={pinLng} pin={true} markerPosition={this.markerPosition} pinName={pinName}/>
             : <div className="text-center">Map loading...</div>
         }
         <button className="btn btn-primary m-3" onClick={this.updatePin}>Update Pin</button>

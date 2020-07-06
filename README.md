@@ -56,7 +56,7 @@ The idea of this project was derived from land surveying and the need to find pr
 ![Responsive Design](public/images/home-page-responsive.png)
 
 ## About The Logo
-![Twemoji Billed Cap](public\favicon.ico)
+![Twemoji Billed Cap](public/images/twemoji-billed-cap-32x32.png)
 
 The billed cap is representitive of the field technicians that work in land surveying. In my experience the technicians would always wear a hat to keep the sun off their faces. I wanted to use a logo that was easy to implement and was free to use. That's when I discovered that Twitter's Twemojis are completely open source under the creative commons lisence CC-BY 4.0. This allowed me to save time when branding the app. 
 
