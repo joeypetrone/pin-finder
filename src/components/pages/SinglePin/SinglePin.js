@@ -62,19 +62,24 @@ class SinglePin extends React.Component {
     const editPinLink = `/pin/edit/${pinId}`;
     const returnToPropertyLink = `/property/${pin.propertyId}`;
     let cardClassName = 'card-title';
+    let pinCardHeader = '';
 
     (pin.wasFound)
       ? cardClassName = 'card-title rounded p-1 text-light bg-success'
       : cardClassName = 'card-title rounded p-1 text-light bg-danger';
+
+    (pin.imageUrl)
+      ? pinCardHeader = <div className="card-header border-0">
+          <img src={pin.imageUrl} className="card-img" alt="" />
+        </div>
+      : pinCardHeader = '';
 
     return (
       <div className="SinglePin w-100">
         <h3>{property.name}</h3>
         <h4>{property.address}</h4>
         <div className='card flex-row flex-wrap justify-content-center'>
-          <div className="card-header border-0">
-            <img src={pin.imageUrl} className="card-img" alt="" />
-          </div>
+          {pinCardHeader}
           <div className="card-block px-2 mt-2">
             <h5 className="card-title"><span className="font-weight-bold">{pin.name}</span></h5>
             <p className="card-text"><span className="font-weight-bold mr-1">Notes: </span>{pin.notes}</p>
