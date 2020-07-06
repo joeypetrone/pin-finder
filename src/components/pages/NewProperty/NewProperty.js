@@ -48,8 +48,7 @@ class NewProperty extends React.Component {
 
   areaChange = (e) => {
     e.preventDefault();
-    const numberValue = e.target.value * 1;
-    this.setState({ propertyArea: numberValue });
+    this.setState({ propertyArea: e.target.value });
   }
 
   imageUrlChange = (e) => {
@@ -88,7 +87,7 @@ class NewProperty extends React.Component {
       imageUrl: propertyImageUrl,
       address: propertyAddress,
       owner: propertyOwner,
-      squareFeet: propertyArea,
+      squareFeet: propertyArea * 1,
       centerLat: propertyLat,
       centerLng: propertyLng,
       uid: authData.getUid(),
