@@ -117,7 +117,7 @@ class EditProperty extends React.Component {
     };
 
     propertyData.putProperty(propertyId, updatedProperty)
-      .then(() => this.props.history.push('/home'))
+      .then(() => this.props.history.push(`/property/${propertyId}`))
       .catch((err) => console.error('Unable to put updated property: ', err));
   }
 

@@ -122,7 +122,7 @@ class EditPin extends React.Component {
     };
 
     pinData.putPin(pinId, updatedPin)
-      .then(() => this.props.history.push('/home'))
+      .then(() => this.props.history.push(`/pin/${pinId}`))
       .catch((err) => console.error('Unable to post new property: ', err));
   }
 
