@@ -78,6 +78,9 @@ class NewPin extends React.Component {
 
   savePin = (e) => {
     e.preventDefault();
+    const { propertyId } = this.props.match.params;
+    console.log('propertyId', propertyId);
+
     const {
       pinName,
       pinPropertyId,
@@ -102,7 +105,7 @@ class NewPin extends React.Component {
     };
 
     pinData.postPin(newPin)
-      .then(() => this.props.history.push('/home'))
+      .then(() => this.props.history.push(`/property/${propertyId}`))
       .catch((err) => console.error('Unable to post new property: ', err));
   }
 
