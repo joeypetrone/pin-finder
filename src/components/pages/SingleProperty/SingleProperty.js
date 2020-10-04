@@ -61,6 +61,10 @@ class SingleProperty extends React.Component {
       .catch((err) => console.error('unable to delete property: ', err));
   }
 
+  viewImage = () => {
+    alert('Modal with image to show')
+  }
+
   render() {
     const { property, pins, loadMap } = this.state;
     const { propertyId } = this.props.match.params;
@@ -76,6 +80,9 @@ class SingleProperty extends React.Component {
     (property.imageUrl)
       ? propertyCardHeader = <div className="card-header border-0">
           <img src={property.imageUrl} className="card-img" alt="" />
+          <div>
+            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i class="fas fa-search-plus"></i></button>
+          </div>
         </div>
       : propertyCardHeader = '';
 
