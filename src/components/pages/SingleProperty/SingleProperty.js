@@ -7,6 +7,7 @@ import pinData from '../../../helpers/data/pinData';
 
 import MyMap from '../../shared/MyMap/MyMap';
 import Pins from '../../shared/Pins/Pins';
+import Modal from '../../shared/Modal/Modal';
 
 import './SingleProperty.scss';
 
@@ -122,6 +123,7 @@ class SingleProperty extends React.Component {
             {buildPinList}
           </ListGroup>
         </div>
+        <Modal />
       </div>
     );
   }
