@@ -7,6 +7,7 @@ import pinData from '../../../helpers/data/pinData';
 
 import MyMap from '../../shared/MyMap/MyMap';
 import Pins from '../../shared/Pins/Pins';
+import Modal from '../../shared/Modal/Modal';
 
 import './SingleProperty.scss';
 
@@ -15,6 +16,7 @@ class SingleProperty extends React.Component {
     property: {},
     pins: [],
     loadMap: false,
+    show: false,
   }
 
   getPins = () => {
@@ -61,8 +63,9 @@ class SingleProperty extends React.Component {
       .catch((err) => console.error('unable to delete property: ', err));
   }
 
-  viewImage = () => {
-    alert('Modal with image to show')
+  viewImage = (e) => {
+    console.log('viewImage Toggle');
+    this.setState({ show: !this.state.show });
   }
 
   render() {
@@ -81,7 +84,7 @@ class SingleProperty extends React.Component {
       ? propertyCardHeader = <div className="card-header border-0">
           <img src={property.imageUrl} className="card-img" alt="" />
           <div>
-            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i class="fas fa-search-plus"></i></button>
+            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i className="fas fa-search-plus"></i></button>
           </div>
         </div>
       : propertyCardHeader = '';
@@ -106,6 +109,9 @@ class SingleProperty extends React.Component {
             </div>
           </div>
         </div>
+        <Modal viewImage={this.viewImage} show={this.state.show}>
+            <img src={property.imageUrl} className="modal-img" alt="" />
+        </Modal>
         <div className="justify-content-center mb-3">
           {
             loadMap
