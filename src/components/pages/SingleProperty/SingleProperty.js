@@ -84,7 +84,7 @@ class SingleProperty extends React.Component {
       ? propertyCardHeader = <div className="card-header border-0">
           <img src={property.imageUrl} className="card-img" alt="" />
           <div>
-            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i class="fas fa-search-plus"></i></button>
+            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i className="fas fa-search-plus"></i></button>
           </div>
         </div>
       : propertyCardHeader = '';
@@ -109,6 +109,9 @@ class SingleProperty extends React.Component {
             </div>
           </div>
         </div>
+        <Modal viewImage={this.viewImage} show={this.state.show}>
+            <img src={property.imageUrl} className="modal-img" alt="" />
+        </Modal>
         <div className="justify-content-center mb-3">
           {
             loadMap
@@ -125,7 +128,6 @@ class SingleProperty extends React.Component {
             {buildPinList}
           </ListGroup>
         </div>
-        <Modal viewImage={this.state.viewImage} show={this.state.show}>{property.name} Image</Modal>
       </div>
     );
   }
