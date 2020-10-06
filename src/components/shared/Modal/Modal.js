@@ -1,11 +1,8 @@
 import React from 'react';
 
 export default class Modal extends React.Component {
-  onClose = (e) => {
-    this.props.onClose && this.props.onClose(e);
-  };
-
   render() {
+    const viewImage = this.props;
     if (!this.props.show) {
       return null;
     }
@@ -13,7 +10,7 @@ export default class Modal extends React.Component {
       <div>
         <div>{this.props.children}</div>
         <div>
-          <button className="btn btn-danger btn-sm" onClose={ (e) => { this.onClose(e); }}>Close</button>
+          <button className="btn btn-danger btn-sm" onClose={viewImage()}>Close</button>
         </div>
       </div>
     );

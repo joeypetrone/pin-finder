@@ -64,6 +64,7 @@ class SingleProperty extends React.Component {
   }
 
   viewImage = (e) => {
+    console.log('viewImage Toggle');
     this.setState({ show: !this.state.show });
   }
 
@@ -124,7 +125,7 @@ class SingleProperty extends React.Component {
             {buildPinList}
           </ListGroup>
         </div>
-        <Modal onClose={this.viewImage} show={this.state.show}>{property.name} Image</Modal>
+        <Modal viewImage={this.state.viewImage} show={this.state.show}>{property.name} Image</Modal>
       </div>
     );
   }
