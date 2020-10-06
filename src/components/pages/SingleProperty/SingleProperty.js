@@ -16,6 +16,7 @@ class SingleProperty extends React.Component {
     property: {},
     pins: [],
     loadMap: false,
+    show: false,
   }
 
   getPins = () => {
@@ -62,8 +63,8 @@ class SingleProperty extends React.Component {
       .catch((err) => console.error('unable to delete property: ', err));
   }
 
-  viewImage = () => {
-    alert('Modal with image to show')
+  viewImage = (e) => {
+    this.setState({ show: !this.state.show });
   }
 
   render() {
@@ -123,7 +124,7 @@ class SingleProperty extends React.Component {
             {buildPinList}
           </ListGroup>
         </div>
-        <Modal />
+        <Modal onClose={this.viewImage} show={this.state.show}>{property.name} Image</Modal>
       </div>
     );
   }
