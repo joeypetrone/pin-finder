@@ -16,4 +16,12 @@
     width: 500px;
     height: 500px;
   }
+
+  .btn-responsive {
+    /* matches 'btn-md' */
+    opacity: 0.9;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 64px;
+  }
 }

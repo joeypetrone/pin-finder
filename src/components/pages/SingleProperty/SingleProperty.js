@@ -64,7 +64,6 @@ class SingleProperty extends React.Component {
   }
 
   viewImage = (e) => {
-    console.log('viewImage Toggle');
     this.setState({ show: !this.state.show });
   }
 

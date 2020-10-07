@@ -9,7 +9,6 @@ export default class Modal extends React.Component {
   }
 
   closeModal = (e) => {
-    console.log('closeModal');
     this.props.viewImage();
   }
 
