@@ -12,6 +12,13 @@ export default class Modal extends React.Component {
     this.props.viewImage();
   }
 
+  handleKeyPress = (e) => {
+    console.log('in key press');
+    if (e.key === 'E') {
+      console.log('Pressed Enter');
+    }
+  }
+
   render() {
     if (!this.props.show) {
       return null;
@@ -21,6 +28,7 @@ export default class Modal extends React.Component {
         <div className="modal-body">
           {this.props.children}
           <div>
+            <input onKeyPress={this.handleKeyPress}/>
             <button className="btn btn-danger btn-sm modal-btn" onClick={this.closeModal}>Close</button>
           </div>
         </div>
