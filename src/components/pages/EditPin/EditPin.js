@@ -105,9 +105,16 @@ class EditPin extends React.Component {
       pinNotes,
       pinLat,
       pinLng,
-      wasFound,
       pinTypeId,
     } = this.state;
+
+    let { wasFound } = this.state;
+
+    if (pinTypeId === 'pinType19') {
+      wasFound = false;
+    } else {
+      wasFound = true;
+    }
 
     const updatedPin = {
       name: pinName,
