@@ -9,8 +9,14 @@ export default class Modal extends React.Component {
   }
 
   closeModal = (e) => {
-    console.log('closeModal');
     this.props.viewImage();
+  }
+
+  handleKeyPress = (e) => {
+    console.log('in key press');
+    if (e.key === 'E') {
+      console.log('Pressed Enter');
+    }
   }
 
   render() {

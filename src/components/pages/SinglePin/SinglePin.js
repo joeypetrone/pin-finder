@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import pinData from '../../../helpers/data/pinData';
 
 import MyMap from '../../shared/MyMap/MyMap';
+import Modal from '../../shared/Modal/Modal';
 
 import './SinglePin.scss';
 import propertyData from '../../../helpers/data/propertyData';
@@ -50,6 +51,10 @@ class SinglePin extends React.Component {
       .catch((err) => console.error('Unable to delete pin in pin single view: ', err));
   }
 
+  viewImage = (e) => {
+    this.setState({ show: !this.state.show });
+  }
+
   render() {
     const {
       property,
@@ -71,6 +76,9 @@ class SinglePin extends React.Component {
     (pin.imageUrl)
       ? pinCardHeader = <div className="card-header border-0">
           <img src={pin.imageUrl} className="card-img" alt="" />
+          <div>
+            <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i className="fas fa-search-plus"></i></button>
+          </div>
         </div>
       : pinCardHeader = '';
 
@@ -95,6 +103,9 @@ class SinglePin extends React.Component {
             </div>
           </div>
         </div>
+        <Modal viewImage={this.viewImage} show={this.state.show}>
+            <img src={pin.imageUrl} className="modal-img" alt="" />
+        </Modal>
         <div className="justify-content-center mb-3">
           {
             loadMap

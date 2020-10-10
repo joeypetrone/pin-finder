@@ -36,6 +36,7 @@ The idea of this project was derived from land surveying and the need to find pr
 - Create, Read, Update, and Delete pins for each property
 - Use Leaflet Map to Create and Update property and pin locations 
 - Use Leaflet Map Marker to set a visual location on the map for each pin
+- Custom modal to view thumbnail images at a higher resolution 
 
 ## Screenshots
 #### Home Page
