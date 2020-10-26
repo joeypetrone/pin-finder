@@ -24,7 +24,7 @@ export default class Modal extends React.Component {
       return null;
     }
     return (
-      <div className="modal-container">
+      <div className="modal-container" onClick={this.closeModal}>
         <div className="modal-body">
           {this.props.children}
           <div>
