@@ -63,7 +63,8 @@ class SingleProperty extends React.Component {
       .catch((err) => console.error('unable to delete property: ', err));
   }
 
-  viewImage = (e) => {
+  viewImage = () => {
+    window.scrollTo(0, 0);
     this.setState({ show: !this.state.show });
   }
 
@@ -73,6 +74,7 @@ class SingleProperty extends React.Component {
     const editPropertyLink = `/property/edit/${propertyId}`;
     const addPinLink = `/pin/new/${propertyId}`;
     const returnToHomeLink = '/home';
+    const imgAltTag = `${property.name} photo`;
     let propertyCardHeader = '';
 
     const buildPinList = pins.map((pin) => (
@@ -81,7 +83,7 @@ class SingleProperty extends React.Component {
 
     (property.imageUrl)
       ? propertyCardHeader = <div className="card-header border-0">
-          <img src={property.imageUrl} className="card-img" alt="" />
+          <img src={property.imageUrl} className="card-img" alt={imgAltTag} onClick={this.viewImage}/>
           <div>
             <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i className="fas fa-search-plus"></i></button>
           </div>
@@ -109,7 +111,7 @@ class SingleProperty extends React.Component {
           </div>
         </div>
         <Modal viewImage={this.viewImage} show={this.state.show}>
-            <img src={property.imageUrl} className="modal-img" alt="" />
+            <img src={property.imageUrl} className="modal-img" alt={imgAltTag} />
         </Modal>
         <div className="justify-content-center mb-3">
           {

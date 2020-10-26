@@ -51,7 +51,7 @@ class SinglePin extends React.Component {
       .catch((err) => console.error('Unable to delete pin in pin single view: ', err));
   }
 
-  viewImage = (e) => {
+  viewImage = () => {
     this.setState({ show: !this.state.show });
   }
 
@@ -66,6 +66,7 @@ class SinglePin extends React.Component {
     const { pinId } = this.props.match.params;
     const editPinLink = `/pin/edit/${pinId}`;
     const returnToPropertyLink = `/property/${pin.propertyId}`;
+    const imgAltTag = `${property.name} photo`;
     let cardClassName = 'card-title';
     let pinCardHeader = '';
 
@@ -75,7 +76,7 @@ class SinglePin extends React.Component {
 
     (pin.imageUrl)
       ? pinCardHeader = <div className="card-header border-0">
-          <img src={pin.imageUrl} className="card-img" alt="" />
+          <img src={pin.imageUrl} className="card-img" alt={imgAltTag} onClick={this.viewImage}/>
           <div>
             <button className="btn btn-dark btn-sm btn-responsive" onClick={this.viewImage}><i className="fas fa-search-plus"></i></button>
           </div>
@@ -104,7 +105,7 @@ class SinglePin extends React.Component {
           </div>
         </div>
         <Modal viewImage={this.viewImage} show={this.state.show}>
-            <img src={pin.imageUrl} className="modal-img" alt="" />
+            <img src={pin.imageUrl} className="modal-img" alt={imgAltTag} />
         </Modal>
         <div className="justify-content-center mb-3">
           {
