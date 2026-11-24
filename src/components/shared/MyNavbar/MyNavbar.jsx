@@ -13,6 +13,8 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+import guestData from '../../../helpers/data/guestData';
+
 import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
@@ -41,6 +43,11 @@ class MyNavbar extends React.Component {
       if (authed) {
         return (
           <Nav className="ml-auto" navbar>
+            {guestData.isGuest() && (
+              <NavItem className="guest-note">
+                <span className="badge badge-warning" title="Guest data stays with this browser and is lost after logout">Guest mode</span>
+              </NavItem>
+            )}
             <NavItem>
               <NavLink tag={RRNavLink} to='/home'>Home</NavLink>
             </NavItem>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import PropertyCard from '../../shared/PropertyCard/PropertyCard';
 
 import authData from '../../../helpers/data/authData';
+import guestData from '../../../helpers/data/guestData';
 import propertyData from '../../../helpers/data/propertyData';
 
 import './Home.scss';
@@ -17,7 +18,8 @@ class Home extends React.Component {
 
   getProperties = () => {
     const uid = authData.getUid();
-    propertyData.getPropertiesByUid(uid)
+    guestData.whenSeeded()
+      .then(() => propertyData.getPropertiesByUid(uid))
       .then((properties) => this.setState({ properties }))
       .catch((err) => console.error('unable to get properties: ', err));
   };
