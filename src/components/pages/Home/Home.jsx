@@ -23,19 +23,13 @@ class Home extends React.Component {
   };
 
   removeProperty = (propertyId) => {
-    propertyData.deleteProperty(propertyId)
-      .then(() => {
-        pinData.getPinsByPropertyId(propertyId)
-          .then((pins) => {
-            pins.forEach((pin) => {
-              pinData.deletePin(pin.id)
-                .then(() => {})
-                .catch((err) => console.error('Unable to delete pin with property on Home page: ', err));
-            });
-          })
-          .catch((err) => console.error('Unable to get pins to be deleted with property on Home page: ', err));
-        this.getProperties();
-      })
+    // Delete the pins first: the database rules only let a user list a
+    // property's pins while that property still exists and belongs to them.
+    pinData.getPinsByPropertyId(propertyId)
+      .then((pins) => Promise.all(pins.map((pin) => pinData.deletePin(pin.id))))
+      .catch((err) => console.error('Unable to delete pins with property on Home page: ', err))
+      .then(() => propertyData.deleteProperty(propertyId))
+      .then(() => this.getProperties())
       .catch((err) => console.error('Unable to delete property on Home page: ', err));
   };
 
