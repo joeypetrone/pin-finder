@@ -13,14 +13,14 @@ import pinData from '../../../helpers/data/pinData';
 class Home extends React.Component {
   state = {
     properties: [],
-  }
+  };
 
   getProperties = () => {
     const uid = authData.getUid();
     propertyData.getPropertiesByUid(uid)
       .then((properties) => this.setState({ properties }))
       .catch((err) => console.error('unable to get properties: ', err));
-  }
+  };
 
   removeProperty = (propertyId) => {
     propertyData.deleteProperty(propertyId)
@@ -37,7 +37,7 @@ class Home extends React.Component {
         this.getProperties();
       })
       .catch((err) => console.error('Unable to delete property on Home page: ', err));
-  }
+  };
 
   componentDidMount() {
     this.getProperties();

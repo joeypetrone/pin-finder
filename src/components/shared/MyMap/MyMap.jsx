@@ -23,11 +23,11 @@ class MyMap extends React.Component {
     currentPosition: PropTypes.func,
     markerPosition: PropTypes.func,
     pin: PropTypes.bool,
-  }
+  };
 
   state = {
     zoom: 18,
-  }
+  };
 
   onMove = (e) => {
     const { currentPosition } = this.props;
@@ -36,7 +36,7 @@ class MyMap extends React.Component {
     if (currentPosition) {
       currentPosition(movePosition);
     }
-  }
+  };
 
   setMarker = (e) => {
     const { markerPosition, pin } = this.props;
@@ -45,7 +45,7 @@ class MyMap extends React.Component {
 
       markerPosition(clickPosition);
     }
-  }
+  };
 
   render() {
     const {

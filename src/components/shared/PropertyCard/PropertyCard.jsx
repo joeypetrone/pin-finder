@@ -11,14 +11,14 @@ class PropertyCard extends React.Component {
   static propTypes = {
     property: propertyShape.propertyShape,
     removeProperty: PropTypes.func.isRequired,
-  }
+  };
 
   deletePropertyEvent = (e) => {
     e.preventDefault();
     const { property, removeProperty } = this.props;
     const propertyId = property.id;
     removeProperty(propertyId);
-  }
+  };
 
   render() {
     const { property } = this.props;

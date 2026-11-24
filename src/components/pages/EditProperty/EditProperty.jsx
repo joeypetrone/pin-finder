@@ -27,7 +27,7 @@ class EditProperty extends React.Component {
     propertyArea: '',
     propertyLat: '',
     propertyLng: '',
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -59,35 +59,35 @@ class EditProperty extends React.Component {
   addressChange = (e) => {
     e.preventDefault();
     this.setState({ propertyAddress: e.target.value });
-  }
+  };
 
   ownerChange = (e) => {
     e.preventDefault();
     this.setState({ propertyOwner: e.target.value });
-  }
+  };
 
   areaChange = (e) => {
     e.preventDefault();
     const numberValue = e.target.value * 1;
     this.setState({ propertyArea: numberValue });
-  }
+  };
 
   imageUrlChange = (e) => {
     e.preventDefault();
     this.setState({ propertyImageUrl: e.target.value });
-  }
+  };
 
   descriptionChange = (e) => {
     e.preventDefault();
     this.setState({ propertyDescription: e.target.value });
-  }
+  };
 
   currentPosition = (position) => {
     const propertyLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     const propertyLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     this.setState({ propertyLat });
     this.setState({ propertyLng });
-  }
+  };
 
   updateProperty = (e) => {
     const { propertyId } = this.props.match.params;
@@ -119,7 +119,7 @@ class EditProperty extends React.Component {
     propertyData.putProperty(propertyId, updatedProperty)
       .then(() => this.props.history.push(`/property/${propertyId}`))
       .catch((err) => console.error('Unable to put updated property: ', err));
-  }
+  };
 
   render() {
     const {

@@ -1,7 +1,7 @@
 import { MapControl } from 'react-leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 
-import '../../../../node_modules/leaflet-geosearch/dist/geosearch.css';
+import 'leaflet-geosearch/dist/geosearch.css';
 
 class Search extends MapControl {
   createLeafletElement() {

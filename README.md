@@ -68,9 +68,12 @@ Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 
 ## How To Run
 1. Clone down this repo
-1. Make sure you have  http-serve installed via npm. If not, get it [HERE](https://npmjs.com/package/http-server).
-1. On your command line run `hs -p 9999`
-1. In your browser go to `http://localhost:9999`
+1. Run `npm install`
+1. Copy `src/helpers/apiKeys.example.json` to `src/helpers/apiKeys.json` and fill in your Firebase project's config
+1. Run `npm start`
+1. In your browser go to `http://localhost:3000`
+
+Other scripts: `npm run build` (production build into `build/`), `npm run lint`, and `npm run deploy` (build and deploy to Firebase Hosting).
 
 ## Contributors
 * Joey Petrone - [joeydev.net](https://joeydev.net)
