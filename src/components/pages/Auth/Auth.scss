@@ -1,6 +1,19 @@
 .Auth {
   text-align: center;
 
+  .Auth-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .Auth-note {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+
   footer {
     position: fixed;
     width: 100%;

@@ -14,4 +14,10 @@
       pointer-events: none;
     }
   }
+
+  .guest-note {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
 }
