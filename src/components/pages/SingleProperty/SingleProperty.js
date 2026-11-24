@@ -17,14 +17,14 @@ class SingleProperty extends React.Component {
     pins: [],
     loadMap: false,
     show: false,
-  }
+  };
 
   getPins = () => {
     const { propertyId } = this.props.match.params;
     pinData.getPinsByPropertyId(propertyId)
       .then((response) => this.setState({ pins: response }))
       .catch((err) => console.error('Unable to get pins in single property view: ', err));
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -53,7 +53,7 @@ class SingleProperty extends React.Component {
         this.props.history.push('/home');
       })
       .catch((err) => console.error('Unable to delete property in single view: ', err));
-  }
+  };
 
   removePin = (pinId) => {
     pinData.deletePin(pinId)
@@ -61,12 +61,12 @@ class SingleProperty extends React.Component {
         this.getPins();
       })
       .catch((err) => console.error('unable to delete property: ', err));
-  }
+  };
 
   viewImage = () => {
     window.scrollTo(0, 0);
     this.setState({ show: !this.state.show });
-  }
+  };
 
   render() {
     const { property, pins, loadMap } = this.state;

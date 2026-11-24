@@ -11,14 +11,14 @@ class Pins extends React.Component {
   static propTypes = {
     pin: pinShape.pinShape,
     removePin: PropTypes.func.isRequired,
-  }
+  };
 
   deletePinEvent = (e) => {
     e.preventDefault();
     const { pin, removePin } = this.props;
     const pinId = pin.id;
     removePin(pinId);
-  }
+  };
 
   render() {
     const { pin } = this.props;

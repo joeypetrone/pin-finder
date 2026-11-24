@@ -27,14 +27,14 @@ class NewPin extends React.Component {
     pinLng: 0,
     wasFound: true,
     pinTypeId: '',
-  }
+  };
 
   markerPosition = (position) => {
     const pinLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     const pinLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     this.setState({ pinLat });
     this.setState({ pinLng });
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -74,7 +74,7 @@ class NewPin extends React.Component {
     if (pinTypeId === 'pinType19') {
       this.setState({ wasFound: false });
     }
-  }
+  };
 
   savePin = (e) => {
     e.preventDefault();
@@ -107,7 +107,7 @@ class NewPin extends React.Component {
     pinData.postPin(newPin)
       .then(() => this.props.history.push(`/property/${propertyId}`))
       .catch((err) => console.error('Unable to post new property: ', err));
-  }
+  };
 
   render() {
     const {

@@ -29,14 +29,14 @@ class EditPin extends React.Component {
     pinLng: 0,
     wasFound: true,
     pinTypeId: '',
-  }
+  };
 
   markerPosition = (position) => {
     const pinLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     const pinLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     this.setState({ pinLat });
     this.setState({ pinLng });
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -92,7 +92,7 @@ class EditPin extends React.Component {
     if (pinTypeId === 'pinType19') {
       this.setState({ wasFound: false });
     }
-  }
+  };
 
   updatePin = (e) => {
     e.preventDefault();
@@ -131,7 +131,7 @@ class EditPin extends React.Component {
     pinData.putPin(pinId, updatedPin)
       .then(() => this.props.history.push(`/pin/${pinId}`))
       .catch((err) => console.error('Unable to post new property: ', err));
-  }
+  };
 
   render() {
     const {

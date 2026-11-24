@@ -15,7 +15,7 @@ class SinglePin extends React.Component {
     pin: {},
     loadMap: false,
     pinType: '',
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -49,11 +49,11 @@ class SinglePin extends React.Component {
     pinData.deletePin(removePinId)
       .then(() => this.props.history.push(`/property/${goToPropertyId}`))
       .catch((err) => console.error('Unable to delete pin in pin single view: ', err));
-  }
+  };
 
   viewImage = () => {
     this.setState({ show: !this.state.show });
-  }
+  };
 
   render() {
     const {

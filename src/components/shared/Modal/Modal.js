@@ -6,18 +6,18 @@ import './Modal.scss';
 export default class Modal extends React.Component {
   static propTypes = {
     viewImage: PropTypes.func.isRequired,
-  }
+  };
 
   closeModal = (e) => {
     this.props.viewImage();
-  }
+  };
 
   handleKeyPress = (e) => {
     console.log('in key press');
     if (e.key === 'E') {
       console.log('Pressed Enter');
     }
-  }
+  };
 
   render() {
     if (!this.props.show) {

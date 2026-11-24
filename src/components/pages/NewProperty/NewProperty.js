@@ -25,7 +25,7 @@ class NewProperty extends React.Component {
     propertyArea: '',
     propertyLat: 36.133425,
     propertyLng: -86.779653,
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -39,34 +39,34 @@ class NewProperty extends React.Component {
   addressChange = (e) => {
     e.preventDefault();
     this.setState({ propertyAddress: e.target.value });
-  }
+  };
 
   ownerChange = (e) => {
     e.preventDefault();
     this.setState({ propertyOwner: e.target.value });
-  }
+  };
 
   areaChange = (e) => {
     e.preventDefault();
     this.setState({ propertyArea: e.target.value });
-  }
+  };
 
   imageUrlChange = (e) => {
     e.preventDefault();
     this.setState({ propertyImageUrl: e.target.value });
-  }
+  };
 
   descriptionChange = (e) => {
     e.preventDefault();
     this.setState({ propertyDescription: e.target.value });
-  }
+  };
 
   currentPosition = (position) => {
     const propertyLat = position.lat.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     const propertyLng = position.lng.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0] * 1;
     this.setState({ propertyLat });
     this.setState({ propertyLng });
-  }
+  };
 
   saveProperty = (e) => {
     e.preventDefault();
@@ -96,7 +96,7 @@ class NewProperty extends React.Component {
     propertyData.postProperty(newProperty)
       .then(() => this.props.history.push('/home'))
       .catch((err) => console.error('Unable to post new property: ', err));
-  }
+  };
 
   render() {
     const {
