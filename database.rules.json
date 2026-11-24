@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "properties": {
+      ".indexOn": "uid",
+      ".read": "auth != null && query.orderByChild == 'uid' && query.equalTo == auth.uid",
+      "$propertyId": {
+        ".read": "auth != null && data.child('uid').val() == auth.uid",
+        ".write": "auth != null && (!data.exists() || data.child('uid').val() == auth.uid) && (!newData.exists() || newData.child('uid').val() == auth.uid)"
+      }
+    },
+    "pins": {
+      ".indexOn": "propertyId",
+      ".read": "auth != null && query.orderByChild == 'propertyId' && query.equalTo != null && root.child('properties').child(query.equalTo).child('uid').val() == auth.uid",
+      "$pinId": {
+        ".read": "auth != null && data.child('uid').val() == auth.uid",
+        ".write": "auth != null && (!data.exists() || data.child('uid').val() == auth.uid) && (!newData.exists() || (newData.child('uid').val() == auth.uid && newData.child('propertyId').isString() && root.child('properties').child(newData.child('propertyId').val()).child('uid').val() == auth.uid))"
+      }
+    },
+    "pinTypes": {
+      ".read": "auth != null",
+      ".write": false
+    }
+  }
+}

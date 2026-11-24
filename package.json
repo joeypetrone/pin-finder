@@ -21,7 +21,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.jsx",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "test:rules": "firebase emulators:exec --only database \"node test/database.rules.test.mjs\"",
+    "deploy:rules": "firebase deploy --only database"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.3.0",
