@@ -42,7 +42,9 @@ const PrivateRoute = ({ component: Component, authed, ...rest }) => {
 
 class App extends React.Component {
   state = {
-    authed: false,
+    // null until Firebase reports the initial auth state, so pages (and their
+    // database calls) don't mount before currentUser and its token exist.
+    authed: null,
   }
 
   componentDidMount() {
@@ -61,6 +63,9 @@ class App extends React.Component {
 
   render() {
     const { authed } = this.state;
+    if (authed === null) {
+      return <div className="App" />;
+    }
     return (
       <div className="App">
         <BrowserRouter>
